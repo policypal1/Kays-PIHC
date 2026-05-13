@@ -107,7 +107,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 34px;
+      gap: 28px;
       list-style: none;
     }
 
@@ -212,20 +212,23 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(246, 253, 253, 0.84) 0%, rgba(236, 250, 250, 0.66) 42%, rgba(236, 250, 250, 0.20) 100%),
+        linear-gradient(90deg, rgba(246, 253, 253, 0.86) 0%, rgba(236, 250, 250, 0.68) 42%, rgba(236, 250, 250, 0.20) 100%),
         url("./ChatGPT Image May 12, 2026, 08_49_21 PM.png") center center / cover no-repeat;
-      padding: 108px 0 118px;
+      padding: 112px 0 0;
+      min-height: 720px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(390px, 510px);
-      align-items: center;
+      grid-template-columns: minmax(0, 1fr) minmax(390px, 560px);
+      align-items: end;
       gap: clamp(34px, 5vw, 84px);
+      min-height: 608px;
     }
 
     .hero-content {
       max-width: 680px;
+      padding-bottom: 118px;
     }
 
     .hero-eyebrow {
@@ -293,49 +296,30 @@
     .hero-visual {
       position: relative;
       width: 100%;
-      max-width: 510px;
-      min-height: 520px;
+      max-width: 560px;
+      height: 610px;
       margin-left: auto;
+      align-self: end;
     }
 
-    .nurse-card {
+    .hero-person {
       position: absolute;
-      inset: 0;
-      overflow: hidden;
-      border-radius: 34px;
-      background: rgba(255, 255, 255, 0.32);
-      border: 1px solid rgba(255, 255, 255, 0.70);
-      box-shadow: var(--shadow-lg);
-      backdrop-filter: blur(18px) saturate(145%);
-      -webkit-backdrop-filter: blur(18px) saturate(145%);
-    }
-
-    .nurse-card::before {
-      content: "";
-      position: absolute;
-      inset: 16px;
-      border-radius: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      background: rgba(255, 255, 255, 0.07);
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .nurse-img {
-      position: absolute;
+      z-index: 4;
       left: 50%;
-      bottom: -10px;
+      bottom: -4px;
       transform: translateX(-50%);
-      width: 94%;
-      height: 126%;
+      width: 112%;
+      max-width: none;
+      height: 118%;
       object-fit: contain;
       object-position: center bottom;
-      filter: drop-shadow(0 24px 34px rgba(23, 32, 42, 0.16));
+      filter: drop-shadow(0 30px 38px rgba(23, 32, 42, 0.18));
+      pointer-events: none;
     }
 
     .trust-card {
       position: absolute;
-      z-index: 5;
+      z-index: 6;
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 12px;
@@ -348,6 +332,11 @@
       box-shadow: var(--shadow-md);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
+    }
+
+    .trust-card-behind {
+      z-index: 2;
+      opacity: 0.98;
     }
 
     .trust-check {
@@ -394,18 +383,18 @@
     }
 
     .trust-card-1 {
-      top: 8%;
-      left: -6%;
+      top: 76px;
+      left: 64px;
     }
 
     .trust-card-2 {
-      top: 45%;
-      right: -11%;
+      top: 265px;
+      right: -8px;
     }
 
     .trust-card-3 {
-      bottom: 10%;
-      left: -1%;
+      bottom: 128px;
+      left: 20px;
     }
 
     /* ABOUT SECTION */
@@ -702,9 +691,9 @@
       border-radius: 16px;
       background: white;
       box-shadow: 0 18px 42px rgba(23, 32, 42, 0.10);
-      min-height: 430px;
+      min-height: 500px;
       display: grid;
-      grid-template-rows: 52% 48%;
+      grid-template-rows: 50% 50%;
       border: 1px solid rgba(23, 32, 42, 0.06);
       transition: transform 0.22s ease, box-shadow 0.22s ease;
     }
@@ -728,10 +717,11 @@
     }
 
     .service-content {
-      padding: 28px 30px 30px;
+      padding: 30px 30px 32px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      min-height: 250px;
     }
 
     .service-content h3 {
@@ -749,7 +739,7 @@
       font-size: 15px;
       font-weight: 600;
       line-height: 1.6;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .service-link {
@@ -757,7 +747,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 11px 22px;
+      padding: 12px 24px;
       border-radius: 999px;
       background: var(--pink);
       color: white;
@@ -781,95 +771,152 @@
 
     /* HOW IT WORKS */
     .how-it-works {
+      background: #ffffff;
+      padding: 104px 0 112px;
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(251, 248, 243, 0.94) 0%, rgba(251, 248, 243, 0.88) 44%, rgba(251, 248, 243, 0.72) 100%),
-        url("./e4bbdb94-613e-4e5b-9c68-2d8f71910d98.png") center center / cover no-repeat;
-      padding: 104px 0 112px;
     }
 
-    .how-grid {
-      display: grid;
-      grid-template-columns: 0.82fr 1.18fr;
-      gap: clamp(42px, 6vw, 86px);
-      align-items: center;
+    .how-it-works::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(21, 155, 154, 0.07), transparent 28%),
+        radial-gradient(circle at 88% 22%, rgba(199, 91, 120, 0.07), transparent 28%);
+      pointer-events: none;
+    }
+
+    .how-heading {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 54px;
     }
 
     .how-kicker {
-      color: var(--pink);
+      color: var(--teal);
       font-size: 13px;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .how-title {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(42px, 5vw, 62px);
-      line-height: 1.02;
-      letter-spacing: -0.045em;
-      margin-bottom: 20px;
       color: var(--text);
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1.04;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      margin-bottom: 16px;
     }
 
     .how-copy {
       color: var(--text-soft);
       font-size: 17px;
       font-weight: 600;
-      line-height: 1.7;
-      max-width: 520px;
-      margin-bottom: 30px;
+      line-height: 1.75;
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    .how-steps {
+    .process-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 26px;
+      margin-top: 44px;
     }
 
-    .step-card {
+    .process-card {
+      position: relative;
+      min-height: 250px;
+      padding: 32px 28px 34px;
+      background: white;
+      border-radius: 26px;
+      box-shadow: 0 18px 50px rgba(23, 32, 42, 0.08);
+      border: 1px solid rgba(23, 32, 42, 0.05);
+      overflow: hidden;
+    }
+
+    .process-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 6px;
+      background: linear-gradient(90deg, var(--teal), var(--pink));
+    }
+
+    .process-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 24px;
+      color: var(--teal);
+    }
+
+    .process-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .process-card h3 {
+      font-family: "Fraunces", Georgia, serif;
+      color: var(--text);
+      font-size: 27px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 14px;
+    }
+
+    .process-card p {
+      color: var(--text-soft);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.65;
+    }
+
+    .process-line {
+      position: relative;
+      z-index: 1;
+      max-width: 880px;
+      margin: 34px auto 0;
+      height: 26px;
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 18px;
-      align-items: flex-start;
-      padding: 24px;
-      border-radius: 22px;
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(21, 155, 154, 0.12);
-      box-shadow: 0 18px 40px rgba(23, 32, 42, 0.08);
-      backdrop-filter: blur(12px);
+      grid-template-columns: repeat(4, 1fr);
+      align-items: center;
     }
 
-    .step-number {
-      width: 54px;
-      height: 54px;
-      border-radius: 16px;
+    .process-line::before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 50%;
+      height: 1px;
+      background: rgba(23, 32, 42, 0.20);
+      transform: translateY(-50%);
+    }
+
+    .process-dot {
+      position: relative;
+      z-index: 2;
+      justify-self: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
       background: var(--teal);
       color: white;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1;
-      box-shadow: 0 14px 28px rgba(21, 155, 154, 0.20);
-    }
-
-    .step-card h3 {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 27px;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .step-card p {
-      color: var(--text-soft);
-      font-size: 15px;
-      font-weight: 600;
-      line-height: 1.6;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 0 0 8px white;
     }
 
     /* RESPONSIVE */
@@ -883,13 +930,25 @@
       }
 
       .hero-grid,
-      .about-grid,
-      .how-grid {
+      .about-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 88px;
+      }
+
+      .hero-grid {
+        align-items: center;
+      }
+
+      .hero-content {
+        padding-bottom: 0;
       }
 
       .hero-visual {
         margin: 0 auto;
+        height: 560px;
       }
 
       .about-visual {
@@ -898,6 +957,14 @@
 
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-line {
+        display: none;
       }
     }
 
@@ -955,7 +1022,8 @@
       }
 
       .hero {
-        padding: 72px 0 84px;
+        padding: 72px 0 0;
+        min-height: auto;
       }
 
       .hero-title {
@@ -963,12 +1031,14 @@
       }
 
       .hero-visual {
-        min-height: 470px;
+        min-height: auto;
+        height: 520px;
         max-width: 410px;
       }
 
-      .nurse-img {
-        height: 122%;
+      .hero-person {
+        height: 116%;
+        width: 116%;
       }
 
       .trust-card {
@@ -982,6 +1052,21 @@
 
       .trust-sub {
         font-size: 11.5px;
+      }
+
+      .trust-card-1 {
+        top: 48px;
+        left: 12px;
+      }
+
+      .trust-card-2 {
+        top: 235px;
+        right: -14px;
+      }
+
+      .trust-card-3 {
+        bottom: 104px;
+        left: -4px;
       }
 
       .about {
@@ -1037,7 +1122,7 @@
       }
 
       .service-card {
-        min-height: 420px;
+        min-height: 500px;
       }
 
       .how-it-works {
@@ -1061,7 +1146,7 @@
       }
 
       .hero {
-        padding: 58px 0 68px;
+        padding: 58px 0 0;
       }
 
       .hero-cta-row {
@@ -1073,26 +1158,26 @@
       }
 
       .hero-visual {
-        display: grid;
-        gap: 10px;
-        min-height: auto;
+        height: auto;
+        min-height: 480px;
         max-width: 330px;
       }
 
-      .nurse-card {
-        position: relative;
-        aspect-ratio: 4 / 5;
-      }
-
-      .nurse-img {
-        height: 118%;
-        width: 94%;
+      .hero-person {
+        width: 132%;
+        height: 112%;
+        bottom: 0;
       }
 
       .trust-card {
         position: relative;
         inset: auto;
         width: 100%;
+        margin-top: 10px;
+      }
+
+      .trust-card-behind {
+        z-index: 6;
       }
 
       .about-visual {
@@ -1108,14 +1193,14 @@
       }
 
       .service-card {
-        min-height: 430px;
+        min-height: 520px;
       }
 
       .service-content {
         padding: 24px;
       }
 
-      .step-card {
+      .process-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -1213,11 +1298,7 @@
           </div>
 
           <div class="hero-visual fade-up fade-up-3">
-            <div class="nurse-card">
-              <img src="./Untitled design (9).png" alt="Tender Hearts caregiver" class="nurse-img" />
-            </div>
-
-            <div class="trust-card trust-card-1">
+            <div class="trust-card trust-card-1 trust-card-behind">
               <span class="trust-check" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M20 6 9 17l-5-5"/>
@@ -1229,6 +1310,8 @@
                 <p class="trust-sub">Combined care experience</p>
               </div>
             </div>
+
+            <img src="./Untitled design (9).png" alt="Tender Hearts caregiver" class="hero-person" />
 
             <div class="trust-card trust-card-2">
               <span class="trust-check" aria-hidden="true">
@@ -1415,41 +1498,69 @@
 
     <section class="how-it-works" id="how-it-works">
       <div class="container">
-        <div class="how-grid">
-          <div class="how-content">
-            <p class="how-kicker">How It Works</p>
-            <h2 class="how-title">Simple care setup for your family.</h2>
-            <p class="how-copy">
-              Getting started should feel easy. Tender Hearts helps you understand your options, build a care plan, and begin support with a clear next step.
-            </p>
-            <a href="tel:5035094850" class="btn btn-primary">Start With a Call</a>
-          </div>
+        <div class="how-heading">
+          <p class="how-kicker">How We Work</p>
+          <h2 class="how-title">Our four-step care process</h2>
+          <p class="how-copy">
+            Getting care started should feel simple. We learn what your loved one needs, build a clear plan, and begin dependable support at home.
+          </p>
+        </div>
 
-          <div class="how-steps">
-            <div class="step-card">
-              <div class="step-number">01</div>
-              <div>
-                <h3>Call for a consultation</h3>
-                <p>Tell us what your loved one needs, what the current routine looks like, and what type of support would help most.</p>
-              </div>
+        <div class="process-grid">
+          <article class="process-card">
+            <div class="process-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 13h24v16H18l-8 7v-7H8z"/>
+                <path d="M25 22h15v12h-6l-5 5v-5h-4z"/>
+              </svg>
             </div>
+            <h3>Consultation</h3>
+            <p>We start with a simple conversation about needs, routines, concerns, and the type of care that would help most.</p>
+          </article>
 
-            <div class="step-card">
-              <div class="step-number">02</div>
-              <div>
-                <h3>Create a care plan</h3>
-                <p>We build a simple plan around the client’s schedule, preferences, family concerns, and level of daily support needed.</p>
-              </div>
+          <article class="process-card">
+            <div class="process-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="10" y="12" width="24" height="28"/>
+                <path d="M16 8v8M28 8v8M10 20h24"/>
+                <circle cx="34" cy="14" r="6"/>
+              </svg>
             </div>
+            <h3>Scheduling</h3>
+            <p>We discuss timing, availability, and how often support is needed so the care fits the family’s actual schedule.</p>
+          </article>
 
-            <div class="step-card">
-              <div class="step-number">03</div>
-              <div>
-                <h3>Begin dependable care</h3>
-                <p>Once everything is clear, care begins with patience, dignity, and consistent communication with the family.</p>
-              </div>
+          <article class="process-card">
+            <div class="process-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 7v13a9 9 0 0 0 18 0V7"/>
+                <path d="M11 7h8M29 7h8"/>
+                <path d="M24 29v5a7 7 0 0 0 14 0v-3"/>
+                <circle cx="38" cy="28" r="4"/>
+              </svg>
             </div>
-          </div>
+            <h3>Care Plan</h3>
+            <p>We create a personalized care plan around daily living, transportation, companionship, pets, visits, and family priorities.</p>
+          </article>
+
+          <article class="process-card">
+            <div class="process-icon">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 8h20v32H14z"/>
+                <path d="M20 16h8M20 23h8M20 30h5"/>
+                <path d="M33 29l4 4 7-9"/>
+              </svg>
+            </div>
+            <h3>Begin Care</h3>
+            <p>Once everything is clear, care begins with patience, dignity, and consistent communication with the family.</p>
+          </article>
+        </div>
+
+        <div class="process-line">
+          <div class="process-dot">1</div>
+          <div class="process-dot">2</div>
+          <div class="process-dot">3</div>
+          <div class="process-dot">4</div>
         </div>
       </div>
     </section>
