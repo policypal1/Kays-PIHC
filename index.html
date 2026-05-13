@@ -668,13 +668,17 @@
       letter-spacing: -0.045em;
     }
 
-    .section-title span {
+    .section-title span,
+    .how-title span,
+    .testimonial-title span {
       color: var(--teal-dark);
       position: relative;
       white-space: nowrap;
     }
 
-    .section-title span::after {
+    .section-title span::after,
+    .how-title span::after,
+    .testimonial-title span::after {
       content: "";
       position: absolute;
       left: 0;
@@ -813,6 +817,15 @@
       text-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
     }
 
+    .how-title span {
+      color: white;
+    }
+
+    .how-title span::after {
+      background: rgba(255, 255, 255, 0.22);
+      z-index: 0;
+    }
+
     .how-copy {
       color: rgba(255, 255, 255, 0.88);
       font-size: 17px;
@@ -856,6 +869,22 @@
       bottom: 0;
       height: 6px;
       background: var(--teal);
+    }
+
+    .process-card.featured-step {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: white;
+      border-color: rgba(255, 255, 255, 0.30);
+    }
+
+    .process-card.featured-step::after {
+      background: rgba(255, 255, 255, 0.70);
+    }
+
+    .process-card.featured-step .process-icon,
+    .process-card.featured-step h3,
+    .process-card.featured-step p {
+      color: white;
     }
 
     .process-icon {
@@ -1025,7 +1054,7 @@
       inset: 0;
       border-radius: 12px;
       overflow: hidden;
-      background: url("./Top-Things-To-Know-About-Home-Health-Care-After-a-Hospitalization.jpg") center center / cover no-repeat;
+      background: url("./funny-old-man.jpg") center center / cover no-repeat;
       box-shadow: 0 28px 78px rgba(23, 32, 42, 0.13);
     }
 
@@ -1071,8 +1100,9 @@
       overflow: hidden;
       padding: 104px 0 116px;
       background:
-        linear-gradient(90deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.86) 50%, rgba(255, 255, 255, 0.74) 100%),
-        url("./funny-old-man.jpg") center center / cover no-repeat;
+        radial-gradient(circle at 15% 18%, rgba(255, 255, 255, 0.20), transparent 28%),
+        radial-gradient(circle at 88% 20%, rgba(255, 255, 255, 0.12), transparent 26%),
+        linear-gradient(135deg, #dff7f5 0%, #bdecea 42%, #f7e8ee 100%);
     }
 
     .testimonial-heading {
@@ -1081,7 +1111,7 @@
     }
 
     .testimonial-kicker {
-      color: var(--teal);
+      color: var(--teal-dark);
       font-size: 13px;
       font-weight: 900;
       text-transform: uppercase;
@@ -1106,24 +1136,45 @@
       max-width: 820px;
     }
 
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .testimonial-scroll {
+      display: flex;
       gap: 26px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 0 26px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--teal) rgba(255, 255, 255, 0.55);
+    }
+
+    .testimonial-scroll::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .testimonial-scroll::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.55);
+      border-radius: 999px;
+    }
+
+    .testimonial-scroll::-webkit-scrollbar-thumb {
+      background: var(--teal);
+      border-radius: 999px;
     }
 
     .testimonial-card {
       position: relative;
+      flex: 0 0 calc((100% - 52px) / 3);
+      min-width: 350px;
       min-height: 300px;
       padding: 32px 32px 30px;
       border-radius: 28px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.90);
       border: 1px solid rgba(23, 32, 42, 0.09);
       box-shadow: 0 22px 58px rgba(23, 32, 42, 0.10);
       backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      scroll-snap-align: start;
     }
 
     .hearts {
@@ -1190,6 +1241,311 @@
       font-weight: 900;
     }
 
+    /* QUOTE FORM */
+    .quote-section {
+      background: white;
+      padding: 104px 0 112px;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
+      gap: clamp(48px, 7vw, 92px);
+      align-items: start;
+    }
+
+    .quote-kicker {
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 900;
+      font-style: italic;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      margin-bottom: 20px;
+    }
+
+    .quote-title {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(44px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .quote-copy {
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 600;
+      max-width: 540px;
+      margin-bottom: 28px;
+    }
+
+    .quote-contact-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: var(--teal-light);
+      border: 1px solid rgba(21, 155, 154, 0.12);
+      max-width: 460px;
+    }
+
+    .quote-contact-card strong {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 28px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .quote-contact-card a {
+      color: var(--teal-dark);
+      font-weight: 900;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .quote-form {
+      padding: 34px;
+      border-radius: 28px;
+      background: #faf7fb;
+      border: 1px solid rgba(23, 32, 42, 0.08);
+      box-shadow: 0 22px 58px rgba(23, 32, 42, 0.08);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      margin-bottom: 16px;
+    }
+
+    .form-field label {
+      display: block;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid rgba(23, 32, 42, 0.12);
+      background: white;
+      border-radius: 14px;
+      padding: 14px 15px;
+      font: inherit;
+      color: var(--text);
+      outline: none;
+      transition: 0.18s ease;
+    }
+
+    .form-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: rgba(21, 155, 154, 0.55);
+      box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.10);
+    }
+
+    .form-note {
+      color: var(--text-soft);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 14px;
+    }
+
+    /* FAQ */
+    .faq {
+      background: #faf7fb;
+      padding: 100px 0 110px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(520px, 1.2fr);
+      gap: clamp(46px, 6vw, 86px);
+      align-items: start;
+    }
+
+    .faq-title {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .faq-copy {
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 600;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(23, 32, 42, 0.08);
+      box-shadow: 0 12px 32px rgba(23, 32, 42, 0.06);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      padding: 22px 24px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+      color: var(--text);
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 23px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      color: var(--teal-dark);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      font-size: 18px;
+      font-weight: 900;
+      transition: 0.18s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+
+    .faq-answer p {
+      padding: 0 24px 22px;
+      color: var(--text-soft);
+      font-size: 15.5px;
+      line-height: 1.7;
+      font-weight: 600;
+    }
+
+    .faq-item.is-open .faq-answer {
+      max-height: 180px;
+    }
+
+    .faq-item.is-open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--teal);
+      color: white;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #102033;
+      color: white;
+      padding: 72px 0 28px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr 1fr;
+      gap: 34px;
+      padding-bottom: 46px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.10);
+      color: white;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+
+    .footer p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 14.5px;
+      line-height: 1.7;
+      font-weight: 600;
+      max-width: 340px;
+    }
+
+    .footer h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 24px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-contact a {
+      color: rgba(255, 255, 255, 0.74);
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 700;
+    }
+
+    .footer-links a:hover,
+    .footer-contact a:hover {
+      color: white;
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: rgba(255, 255, 255, 0.60);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1120px) {
       .nav {
@@ -1202,7 +1558,9 @@
 
       .hero-grid,
       .about-grid,
-      .why-grid {
+      .why-grid,
+      .quote-grid,
+      .faq-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1243,8 +1601,12 @@
         max-width: 720px;
       }
 
-      .testimonial-grid {
-        grid-template-columns: 1fr;
+      .testimonial-card {
+        flex-basis: 430px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -1414,7 +1776,10 @@
         grid-template-columns: 1fr;
       }
 
-      .why-us {
+      .why-us,
+      .testimonials,
+      .quote-section,
+      .faq {
         padding: 78px 0 88px;
       }
 
@@ -1429,8 +1794,13 @@
         min-height: 130px;
       }
 
-      .testimonials {
-        padding: 78px 0 88px;
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1538,6 +1908,8 @@
       }
 
       .testimonial-card {
+        flex-basis: 86vw;
+        min-width: 280px;
         padding: 26px 24px;
       }
 
@@ -1547,6 +1919,14 @@
 
       .quote-mark {
         font-size: 54px;
+      }
+
+      .quote-form {
+        padding: 24px;
+      }
+
+      .footer-bottom {
+        display: grid;
       }
     }
 
@@ -1584,8 +1964,9 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#quote">Quote</a></li>
+          <li><a href="#faq">FAQ</a></li>
         </ul>
 
         <div class="nav-buttons">
@@ -1612,8 +1993,9 @@
         <a href="#services">Services</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#why-us">Why Us</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#quote">Quote</a>
+        <a href="#faq">FAQ</a>
         <a href="tel:5035094850" class="mobile-call">Call 503-509-4850</a>
       </div>
     </div>
@@ -1624,9 +2006,7 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
-            <div class="hero-eyebrow fade-up fade-up-1">
-              Welcome to Tender Hearts
-            </div>
+            <div class="hero-eyebrow fade-up fade-up-1">Welcome to Tender Hearts</div>
 
             <h1 class="hero-title fade-up fade-up-2">
               Compassionate Senior Care <span>at Home.</span>
@@ -1709,9 +2089,7 @@
           <div class="about-content">
             <p class="about-eyebrow">About Tender Hearts</p>
 
-            <h2 class="about-title">
-              Care with dignity, comfort, and compassion.
-            </h2>
+            <h2 class="about-title">Care with dignity, comfort, and compassion.</h2>
 
             <p class="about-copy">
               Tender Hearts provides compassionate, professional in-home care that helps seniors remain independent and supported at home, with personalized care plans built around each client’s needs, routine, and family preferences.
@@ -1849,14 +2227,14 @@
       <div class="container-wide">
         <div class="how-heading">
           <p class="how-kicker">How We Work</p>
-          <h2 class="how-title">Our four-step care process</h2>
+          <h2 class="how-title">Our four-step <span>care process</span></h2>
           <p class="how-copy">
             Getting care started should feel simple. We learn what your loved one needs, build a clear plan, and begin dependable support at home.
           </p>
         </div>
 
         <div class="process-grid">
-          <article class="process-card">
+          <article class="process-card featured-step">
             <div class="process-icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M8 13h24v16H18l-8 7v-7H8z"/>
@@ -1897,7 +2275,6 @@
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="12" y="8" width="24" height="32" rx="2"/>
                 <path d="M18 17h12M18 24h12M18 31h7"/>
-                <path d="M31 32l3 3 7-8"/>
               </svg>
             </div>
             <h3>Begin Care</h3>
@@ -1990,13 +2367,13 @@
       <div class="container">
         <div class="testimonial-heading">
           <p class="testimonial-kicker">Testimonials</p>
-          <h2 class="testimonial-title">What Our Clients Say</h2>
+          <h2 class="testimonial-title">What Our <span>Clients Say</span></h2>
           <p class="testimonial-sub">
             Placeholder reviews for now. These can be swapped with real family testimonials once you have the final wording.
           </p>
         </div>
 
-        <div class="testimonial-grid">
+        <div class="testimonial-scroll">
           <article class="testimonial-card">
             <div>
               <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
@@ -2056,10 +2433,192 @@
               <div class="quote-mark">”</div>
             </div>
           </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+              <p class="testimonial-quote">
+                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.”
+              </p>
+            </div>
+
+            <div class="testimonial-bottom">
+              <div class="reviewer">
+                <div class="reviewer-avatar">LS</div>
+                <div>
+                  <div class="reviewer-name">Linda Smith</div>
+                  <div class="reviewer-location">Salem, OR</div>
+                </div>
+              </div>
+              <div class="quote-mark">”</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section" id="quote">
+      <div class="container">
+        <div class="quote-grid">
+          <div class="quote-content">
+            <p class="quote-kicker">Request Care</p>
+            <h2 class="quote-title">Get a quick care quote.</h2>
+            <p class="quote-copy">
+              Tell us what kind of support your loved one needs. We’ll use this information to understand the situation and follow up with the next best step.
+            </p>
+
+            <div class="quote-contact-card">
+              <strong>Prefer to call?</strong>
+              <a href="tel:5035094850">503-509-4850</a>
+            </div>
+          </div>
+
+          <form class="quote-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="name">Your Name</label>
+                <input id="name" type="text" placeholder="Full name">
+              </div>
+
+              <div class="form-field">
+                <label for="phone">Phone Number</label>
+                <input id="phone" type="tel" placeholder="503-000-0000">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="location">City</label>
+                <input id="location" type="text" placeholder="Salem, Keizer, Woodburn...">
+              </div>
+
+              <div class="form-field">
+                <label for="care-type">Type of Care</label>
+                <select id="care-type">
+                  <option>Daily living support</option>
+                  <option>Transportation</option>
+                  <option>Hospital visits</option>
+                  <option>Pet help</option>
+                  <option>Custom care</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="message">What do you need help with?</label>
+              <textarea id="message" placeholder="Tell us about the care needed, schedule, and any family concerns."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <p class="form-note">Placeholder form only. Connect this to Wix, Formspree, Netlify Forms, or your backend before launch.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="faq-grid">
+          <div>
+            <p class="section-kicker">Questions</p>
+            <h2 class="faq-title">Frequently asked questions.</h2>
+            <p class="faq-copy">
+              Simple answers for families looking into in-home care for a loved one.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <div class="faq-item is-open">
+              <button class="faq-question" type="button">
+                What areas do you serve?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>We serve Salem, Keizer, Woodburn, and surrounding communities. If you are nearby, call and we can confirm availability.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                What services do you provide?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Services may include daily living support, companionship, transportation, walking assistance, pet help, hospital visits, and custom support based on the client’s needs.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                Do you create custom care plans?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. Care plans are built around the client’s routine, family preferences, schedule, and level of support needed.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                How do we get started?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>The easiest first step is to call for a consultation. From there, we can discuss needs, scheduling, and the best care setup.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">Add Logo</div>
+          <p>
+            Tender Hearts provides compassionate in-home care for seniors and families throughout Salem, Keizer, Woodburn, and nearby communities.
+          </p>
+        </div>
+
+        <div>
+          <h3>Pages</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#services">Daily Living Support</a></li>
+            <li><a href="#services">Transportation</a></li>
+            <li><a href="#services">Hospital Visits</a></li>
+            <li><a href="#services">Custom Care</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <div class="footer-contact">
+            <a href="tel:5035094850">503-509-4850</a>
+            <a href="mailto:tenderheartsor25@gmail.com">tenderheartsor25@gmail.com</a>
+            <span>Salem, Keizer, Woodburn & surrounding communities</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Tender Hearts In-Home Care. All rights reserved.</span>
+        <span>Care with dignity, comfort, and compassion.</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const header = document.getElementById("siteHeader");
@@ -2092,6 +2651,16 @@
         });
       });
     }
+
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach((item) => {
+      const button = item.querySelector(".faq-question");
+
+      button.addEventListener("click", () => {
+        item.classList.toggle("is-open");
+      });
+    });
   </script>
 </body>
 </html>
