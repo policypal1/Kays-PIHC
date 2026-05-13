@@ -1691,12 +1691,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 78px;
+        min-height: 88px;
       }
 
       .site-logo {
-        height: 62px;
-        max-width: 170px;
+        height: 76px;
+        max-width: 200px;
       }
 
       .nav-links,
@@ -1741,7 +1741,7 @@
       }
 
       .hero {
-        padding: 72px 0 0;
+        padding: 74px 0 0;
         min-height: auto;
       }
 
@@ -1749,15 +1749,25 @@
         font-size: clamp(48px, 12vw, 64px);
       }
 
+      .hero-sub {
+        font-size: 16px;
+        line-height: 1.62;
+        max-width: 520px;
+      }
+
+      .hero-cta-row {
+        margin-top: 28px;
+      }
+
       .hero-visual {
         min-height: auto;
-        height: 520px;
+        height: 540px;
         max-width: 410px;
       }
 
       .hero-person {
-        height: 116%;
-        width: 116%;
+        height: 118%;
+        width: 118%;
       }
 
       .trust-card {
@@ -1811,25 +1821,96 @@
         font-size: 10.5px;
       }
 
+      .about-copy {
+        font-size: 15.5px;
+        line-height: 1.62;
+      }
+
       .about-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        border-top: 0;
+        padding-top: 0;
+        margin-top: 24px;
       }
 
       .stat {
-        padding: 0;
+        padding: 13px 8px;
+        background: var(--teal-light);
+        border: 1px solid rgba(21, 155, 154, 0.16);
+        border-radius: 16px;
+        text-align: center;
       }
 
       .stat:not(:last-child)::after {
         display: none;
       }
 
+      .stat-number {
+        font-size: 22px;
+        color: var(--teal-dark);
+      }
+
+      .stat-label {
+        font-size: 11.5px;
+        line-height: 1.25;
+        color: var(--teal-dark);
+      }
+
       .care-banner {
         min-height: 390px;
       }
 
+      .care-banner-content {
+        padding: 74px 0;
+      }
+
+      .care-banner p {
+        font-size: 15.5px;
+        line-height: 1.62;
+        max-width: 460px;
+      }
+
+      .care-stats {
+        padding: 24px 0;
+      }
+
+      .care-stats .container {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .care-stats .container::-webkit-scrollbar {
+        display: none;
+      }
+
       .care-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        grid-template-columns: none;
+        gap: 12px;
+        text-align: center;
+        min-width: max-content;
+      }
+
+      .care-stat {
+        flex: 0 0 132px;
+        padding: 14px 10px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .care-stat-number {
+        font-size: 27px;
+        margin-bottom: 6px;
+      }
+
+      .care-stat-label {
+        font-size: 12px;
+        line-height: 1.25;
       }
 
       .services {
@@ -1837,11 +1918,28 @@
       }
 
       .services-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        grid-template-columns: none;
+        gap: 18px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 8px 4px 18px;
+        scrollbar-width: none;
+      }
+
+      .services-grid::-webkit-scrollbar {
+        display: none;
       }
 
       .service-card {
-        min-height: 540px;
+        flex: 0 0 min(82vw, 370px);
+        min-height: 530px;
+        scroll-snap-align: start;
+      }
+
+      .service-content p {
+        font-size: 14.5px;
+        line-height: 1.55;
       }
 
       .how-it-works {
@@ -1850,6 +1948,23 @@
 
       .process-grid {
         grid-template-columns: 1fr;
+        gap: 22px;
+      }
+
+      .process-card {
+        overflow: visible;
+      }
+
+      .process-card:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -22px;
+        width: 2px;
+        height: 22px;
+        background: rgba(255, 255, 255, 0.74);
+        transform: translateX(-50%);
+        z-index: -1;
       }
 
       .why-us,
@@ -1857,6 +1972,15 @@
       .quote-section,
       .faq {
         padding: 78px 0 88px;
+      }
+
+      .why-intro,
+      .why-item p,
+      .testimonial-sub,
+      .quote-copy,
+      .faq-copy {
+        font-size: 15.5px;
+        line-height: 1.62;
       }
 
       .why-visual {
@@ -1899,9 +2023,13 @@
         width: min(100% - 26px, 1220px);
       }
 
+      .nav {
+        min-height: 82px;
+      }
+
       .site-logo {
-        height: 54px;
-        max-width: 145px;
+        height: 68px;
+        max-width: 180px;
       }
 
       .nav-buttons .btn-primary {
@@ -1913,8 +2041,18 @@
         padding: 58px 0 0;
       }
 
+      .hero-content {
+        position: relative;
+        z-index: 8;
+      }
+
+      .hero-title {
+        font-size: clamp(48px, 13vw, 62px);
+      }
+
       .hero-cta-row {
         align-items: stretch;
+        margin-top: 34px;
       }
 
       .btn-hero {
@@ -1923,25 +2061,62 @@
 
       .hero-visual {
         height: auto;
-        min-height: 480px;
-        max-width: 330px;
+        min-height: 540px;
+        max-width: 350px;
+        margin-top: 18px;
       }
 
       .hero-person {
         width: 132%;
-        height: 112%;
+        height: 114%;
         bottom: 0;
       }
 
       .trust-card {
-        position: relative;
-        inset: auto;
-        width: 100%;
-        margin-top: 10px;
+        position: absolute;
+        width: 190px;
+        padding: 12px;
+        margin-top: 0;
+      }
+
+      .trust-card-1 {
+        top: 28px;
+        left: -14px;
+        z-index: 3;
+      }
+
+      .trust-card-2 {
+        top: 205px;
+        right: -20px;
+        z-index: 6;
+      }
+
+      .trust-card-3 {
+        bottom: 92px;
+        left: -18px;
+        z-index: 6;
       }
 
       .trust-card-behind {
-        z-index: 6;
+        z-index: 3;
+      }
+
+      .trust-check {
+        width: 28px;
+        height: 28px;
+        border-radius: 9px;
+      }
+
+      .trust-label {
+        font-size: 9px;
+      }
+
+      .trust-main {
+        font-size: 17px;
+      }
+
+      .trust-sub {
+        font-size: 10.5px;
       }
 
       .about-visual {
@@ -1963,16 +2138,39 @@
         font-size: 10px;
       }
 
+      .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .stat {
+        padding: 11px 6px;
+        border-radius: 14px;
+      }
+
+      .stat-number {
+        font-size: 18px;
+      }
+
+      .stat-label {
+        font-size: 10px;
+      }
+
       .care-banner-content {
         padding: 70px 0;
       }
 
-      .care-stats-grid {
-        grid-template-columns: 1fr;
+      .care-banner p {
+        max-width: 340px;
+      }
+
+      .care-stat {
+        flex-basis: 120px;
       }
 
       .service-card {
-        min-height: 560px;
+        flex-basis: 86vw;
+        min-height: 545px;
       }
 
       .service-content {
@@ -2188,7 +2386,7 @@
             <h2 class="about-title">Care with dignity, comfort, and compassion.</h2>
 
             <p class="about-copy">
-              Tender Hearts provides compassionate, professional in-home care that helps seniors remain independent and supported at home, with personalized care plans built around each client’s needs, routine, and family preferences.
+              Tender Hearts provides compassionate in-home care that helps seniors stay independent, supported, and comfortable at home with care plans built around each family’s needs.
             </p>
 
             <div class="about-stats">
@@ -2218,7 +2416,7 @@
           <div class="care-banner-content">
             <h2>Personalized care for your loved ones.</h2>
             <p>
-              From companionship and personal care to daily support around the home, Tender Hearts helps families feel confident their loved one is cared for with patience, respect, and dignity.
+              Personal care, companionship, and daily support designed to help loved ones feel safe, comfortable, and cared for at home.
             </p>
             <a href="tel:5035094850" class="btn btn-pink">Call for a Free Consultation</a>
           </div>
@@ -2266,7 +2464,7 @@
             <div class="service-image"></div>
             <div class="service-content">
               <h3>Personal Care</h3>
-              <p>Bathing, dressing, grooming, toileting assistance, and hands-on daily support to help clients feel comfortable and cared for.</p>
+              <p>Bathing, dressing, grooming, toileting assistance, and daily hands-on support.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
@@ -2275,7 +2473,7 @@
             <div class="service-image"></div>
             <div class="service-content">
               <h3>Companionship</h3>
-              <p>Conversation, activities, emotional support, and friendly company to help reduce loneliness and keep clients engaged.</p>
+              <p>Conversation, activities, emotional support, and friendly company throughout the day.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
@@ -2284,7 +2482,7 @@
             <div class="service-image"></div>
             <div class="service-content">
               <h3>Meals & Medication</h3>
-              <p>Nutritious meal preparation tailored to the client’s needs, plus reminders to help medications stay on schedule.</p>
+              <p>Nutritious meal preparation plus reminders to help medications stay on schedule.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
@@ -2293,7 +2491,7 @@
             <div class="service-image"></div>
             <div class="service-content">
               <h3>Light Housekeeping</h3>
-              <p>Tidying, laundry, and maintaining a clean, safe, and comfortable home environment for your loved one.</p>
+              <p>Tidying, laundry, and support keeping the home clean, safe, and comfortable.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
@@ -2302,7 +2500,7 @@
             <div class="service-image"></div>
             <div class="service-content">
               <h3>Transportation & Errands</h3>
-              <p>Help with medical appointments, errands, grocery shopping, and other essential trips outside the home.</p>
+              <p>Help with medical appointments, errands, shopping, and essential trips.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
@@ -2311,7 +2509,7 @@
             <div class="service-image"></div>
             <div class="service-content">
               <h3>Respite & Pet Support</h3>
-              <p>Relief for family caregivers, plus pet support when available, so loved ones and families get extra help when needed.</p>
+              <p>Relief for family caregivers, plus pet support when available.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
