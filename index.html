@@ -24,8 +24,6 @@
       --text: #17202a;
       --text-soft: #52606d;
       --text-muted: #74808c;
-      --red-soft: #ffe4e8;
-      --red-text: #ba3f57;
       --border: rgba(23, 32, 42, 0.08);
       --shadow-md: 0 18px 44px rgba(23, 32, 42, 0.12);
       --shadow-lg: 0 32px 90px rgba(14, 116, 115, 0.18);
@@ -84,26 +82,23 @@
     .nav {
       min-height: 76px;
       display: grid;
-      grid-template-columns: 160px 1fr 220px;
+      grid-template-columns: 170px 1fr 220px;
       align-items: center;
       gap: 16px;
     }
 
-    .logo-placeholder {
+    .logo-link {
       justify-self: start;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 18px;
-      background: var(--red-soft);
-      color: var(--red-text);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      border: 1px solid rgba(186, 63, 87, 0.16);
-      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .site-logo {
+      width: auto;
+      height: 58px;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -691,7 +686,7 @@
       border-radius: 16px;
       background: white;
       box-shadow: 0 18px 42px rgba(23, 32, 42, 0.10);
-      min-height: 520px;
+      min-height: 540px;
       display: grid;
       grid-template-rows: 50% 50%;
       border: 1px solid rgba(23, 32, 42, 0.06);
@@ -721,7 +716,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      min-height: 260px;
+      min-height: 270px;
     }
 
     .service-content h3 {
@@ -762,12 +757,12 @@
       transform: translateY(-1px);
     }
 
-    .service-daily { --service-img: url("./Medical-Assistant-Takes-Elderly-Patient-Outside.jpg"); }
-    .service-transport { --service-img: url("./e4bbdb94-613e-4e5b-9c68-2d8f71910d98.png"); }
-    .service-walking { --service-img: url("./ChatGPT Image May 12, 2026, 08_49_21 PM.png"); }
-    .service-pets { --service-img: url("./Medical-Assistant-Takes-Elderly-Patient-Outside.jpg"); }
-    .service-hospital { --service-img: url("./e4bbdb94-613e-4e5b-9c68-2d8f71910d98.png"); }
-    .service-custom { --service-img: url("./Untitled design (9).png"); }
+    .service-personal { --service-img: url("./ChatGPT Image May 13, 2026, 06_21_18 AM.png"); }
+    .service-companionship { --service-img: url("./ChatGPT Image May 13, 2026, 06_21_18 AM.png"); }
+    .service-meals { --service-img: url("./ChatGPT Image May 13, 2026, 06_28_53 AM.png"); }
+    .service-housekeeping { --service-img: url("./ChatGPT Image May 13, 2026, 06_21_18 AM.png"); }
+    .service-transportation { --service-img: url("./ChatGPT Image May 13, 2026, 06_21_18 AM.png"); }
+    .service-respite { --service-img: url("./b800144c-42b4-482e-af57-41a27e99274f.png"); }
 
     /* HOW IT WORKS */
     .how-it-works {
@@ -1530,19 +1525,18 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .footer-logo {
+    .footer-logo-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 18px;
-      background: rgba(255, 255, 255, 0.10);
-      color: white;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
       margin-bottom: 20px;
+      text-decoration: none;
+    }
+
+    .footer-logo-img {
+      width: auto;
+      height: 72px;
+      object-fit: contain;
     }
 
     .footer p {
@@ -1698,6 +1692,10 @@
         min-height: 72px;
       }
 
+      .site-logo {
+        height: 54px;
+      }
+
       .nav-links,
       .nav-buttons .btn-ghost {
         display: none;
@@ -1840,7 +1838,7 @@
       }
 
       .service-card {
-        min-height: 520px;
+        min-height: 540px;
       }
 
       .how-it-works {
@@ -1898,9 +1896,8 @@
         width: min(100% - 26px, 1220px);
       }
 
-      .logo-placeholder {
-        font-size: 11px;
-        padding: 9px 14px;
+      .site-logo {
+        height: 48px;
       }
 
       .nav-buttons .btn-primary {
@@ -1971,7 +1968,7 @@
       }
 
       .service-card {
-        min-height: 540px;
+        min-height: 560px;
       }
 
       .service-content {
@@ -2055,7 +2052,9 @@
   <header class="header" id="siteHeader">
     <div class="container">
       <nav class="nav" aria-label="Primary navigation">
-        <div class="logo-placeholder">Add Logo</div>
+        <a href="#" class="logo-link" aria-label="Tender Hearts home">
+          <img src="./ChatGPT Image May 13, 2026, 06_21_18 AM.png" alt="Tender Hearts In-Home Care logo" class="site-logo">
+        </a>
 
         <ul class="nav-links">
           <li><a href="#">Home</a></li>
@@ -2259,56 +2258,56 @@
         </div>
 
         <div class="services-grid">
-          <article class="service-card service-daily">
+          <article class="service-card service-personal">
             <div class="service-image"></div>
             <div class="service-content">
-              <h3>Daily Living Support</h3>
-              <p>Help with everyday routines, personal care, meals, reminders, and light support around the home.</p>
+              <h3>Personal Care</h3>
+              <p>Bathing, dressing, grooming, toileting assistance, and hands-on daily support to help clients feel comfortable and cared for.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
 
-          <article class="service-card service-transport">
+          <article class="service-card service-companionship">
             <div class="service-image"></div>
             <div class="service-content">
-              <h3>Transportation</h3>
-              <p>Safe, dependable help getting to appointments, errands, visits, and other important places.</p>
+              <h3>Companionship</h3>
+              <p>Conversation, activities, emotional support, and friendly company to help reduce loneliness and keep clients engaged.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
 
-          <article class="service-card service-walking">
+          <article class="service-card service-meals">
             <div class="service-image"></div>
             <div class="service-content">
-              <h3>Walking Assistance</h3>
-              <p>Support for short walks, movement, and daily activity so clients feel steady and cared for.</p>
+              <h3>Meals & Medication</h3>
+              <p>Nutritious meal preparation tailored to the client’s needs, plus reminders to help medications stay on schedule.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
 
-          <article class="service-card service-pets">
+          <article class="service-card service-housekeeping">
             <div class="service-image"></div>
             <div class="service-content">
-              <h3>Pet Help</h3>
-              <p>Light help with pets for seniors who need an extra hand caring for their companion animals.</p>
+              <h3>Light Housekeeping</h3>
+              <p>Tidying, laundry, and maintaining a clean, safe, and comfortable home environment for your loved one.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
 
-          <article class="service-card service-hospital">
+          <article class="service-card service-transportation">
             <div class="service-image"></div>
             <div class="service-content">
-              <h3>Hospital Visits</h3>
-              <p>Compassionate support during hospital visits, recovery periods, and care transitions.</p>
+              <h3>Transportation & Errands</h3>
+              <p>Help with medical appointments, errands, grocery shopping, and other essential trips outside the home.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
 
-          <article class="service-card service-custom">
+          <article class="service-card service-respite">
             <div class="service-image"></div>
             <div class="service-content">
-              <h3>Custom Care</h3>
-              <p>Flexible care based on what your loved one needs, from companionship to extra daily help.</p>
+              <h3>Respite & Pet Support</h3>
+              <p>Relief for family caregivers, plus pet support when available, so loved ones and families get extra help when needed.</p>
               <a href="tel:5035094850" class="service-link">Learn More</a>
             </div>
           </article>
@@ -2628,12 +2627,12 @@
                 <label for="care-type">Type of Care</label>
                 <select id="care-type" name="careType">
                   <option>All of the above</option>
-                  <option>Daily living support</option>
-                  <option>Transportation</option>
-                  <option>Hospital visits</option>
-                  <option>Pet help</option>
-                  <option>Walking assistance</option>
-                  <option>Custom care</option>
+                  <option>Personal care</option>
+                  <option>Companionship</option>
+                  <option>Meals and medication reminders</option>
+                  <option>Light housekeeping</option>
+                  <option>Transportation and errands</option>
+                  <option>Respite and pet support</option>
                 </select>
               </div>
             </div>
@@ -2735,7 +2734,9 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div class="footer-logo">Add Logo</div>
+          <a href="#" class="footer-logo-link" aria-label="Tender Hearts home">
+            <img src="./ChatGPT Image May 13, 2026, 06_21_18 AM.png" alt="Tender Hearts In-Home Care logo" class="footer-logo-img">
+          </a>
           <p>
             Tender Hearts provides compassionate in-home care for seniors and families throughout Salem, Keizer, Woodburn, and nearby communities.
           </p>
@@ -2754,10 +2755,10 @@
         <div>
           <h3>Services</h3>
           <ul class="footer-links">
-            <li><a href="#services">Daily Living Support</a></li>
+            <li><a href="#services">Personal Care</a></li>
+            <li><a href="#services">Companionship</a></li>
+            <li><a href="#services">Meals & Medication</a></li>
             <li><a href="#services">Transportation</a></li>
-            <li><a href="#services">Hospital Visits</a></li>
-            <li><a href="#services">Custom Care</a></li>
           </ul>
         </div>
 
