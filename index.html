@@ -27,7 +27,6 @@
       --red-soft: #ffe4e8;
       --red-text: #ba3f57;
       --border: rgba(23, 32, 42, 0.08);
-      --shadow-sm: 0 8px 20px rgba(23, 32, 42, 0.06);
       --shadow-md: 0 18px 44px rgba(23, 32, 42, 0.12);
       --shadow-lg: 0 32px 90px rgba(14, 116, 115, 0.18);
     }
@@ -112,15 +111,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 18px;
+      gap: 24px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-soft);
       text-decoration: none;
-      font-size: 13.5px;
-      font-weight: 750;
+      font-size: 14px;
+      font-weight: 800;
       transition: color 0.18s ease;
       white-space: nowrap;
     }
@@ -669,7 +668,6 @@
     }
 
     .section-title span,
-    .how-title span,
     .testimonial-title span {
       color: var(--teal-dark);
       position: relative;
@@ -677,7 +675,6 @@
     }
 
     .section-title span::after,
-    .how-title span::after,
     .testimonial-title span::after {
       content: "";
       position: absolute;
@@ -817,13 +814,8 @@
       text-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
     }
 
-    .how-title span {
-      color: white;
-    }
-
-    .how-title span::after {
-      background: rgba(255, 255, 255, 0.22);
-      z-index: 0;
+    .how-title .blue-word {
+      color: #c9fffb;
     }
 
     .how-copy {
@@ -869,22 +861,6 @@
       bottom: 0;
       height: 6px;
       background: var(--teal);
-    }
-
-    .process-card.featured-step {
-      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-      color: white;
-      border-color: rgba(255, 255, 255, 0.30);
-    }
-
-    .process-card.featured-step::after {
-      background: rgba(255, 255, 255, 0.70);
-    }
-
-    .process-card.featured-step .process-icon,
-    .process-card.featured-step h3,
-    .process-card.featured-step p {
-      color: white;
     }
 
     .process-icon {
@@ -1100,18 +1076,24 @@
       overflow: hidden;
       padding: 104px 0 116px;
       background:
-        radial-gradient(circle at 15% 18%, rgba(255, 255, 255, 0.20), transparent 28%),
-        radial-gradient(circle at 88% 20%, rgba(255, 255, 255, 0.12), transparent 26%),
-        linear-gradient(135deg, #dff7f5 0%, #bdecea 42%, #f7e8ee 100%);
+        linear-gradient(90deg, rgba(10, 65, 75, 0.72) 0%, rgba(10, 65, 75, 0.55) 52%, rgba(10, 65, 75, 0.34) 100%),
+        url("./D50006CA04A0472CB23DA2E11C0F1C49.jpeg") center center / cover no-repeat;
+    }
+
+    .testimonial-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 28px;
+      margin-bottom: 48px;
     }
 
     .testimonial-heading {
       max-width: 860px;
-      margin-bottom: 48px;
     }
 
     .testimonial-kicker {
-      color: var(--teal-dark);
+      color: rgba(255, 255, 255, 0.88);
       font-size: 13px;
       font-weight: 900;
       text-transform: uppercase;
@@ -1124,16 +1106,52 @@
       font-size: clamp(42px, 5vw, 62px);
       line-height: 1.02;
       letter-spacing: -0.045em;
-      color: var(--text);
+      color: white;
       margin-bottom: 20px;
+      text-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .testimonial-title span {
+      color: #c9fffb;
+    }
+
+    .testimonial-title span::after {
+      background: rgba(255, 255, 255, 0.18);
     }
 
     .testimonial-sub {
-      color: var(--text-soft);
+      color: rgba(255, 255, 255, 0.86);
       font-size: 17px;
       line-height: 1.75;
-      font-weight: 600;
+      font-weight: 650;
       max-width: 820px;
+    }
+
+    .review-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .review-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      background: rgba(255, 255, 255, 0.20);
+      color: white;
+      font-size: 24px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.18s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .review-btn:hover {
+      background: white;
+      color: var(--teal-dark);
+      transform: translateY(-1px);
     }
 
     .testimonial-scroll {
@@ -1141,9 +1159,10 @@
       gap: 26px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
       padding: 10px 0 26px;
       scrollbar-width: thin;
-      scrollbar-color: var(--teal) rgba(255, 255, 255, 0.55);
+      scrollbar-color: white rgba(255, 255, 255, 0.25);
     }
 
     .testimonial-scroll::-webkit-scrollbar {
@@ -1151,12 +1170,12 @@
     }
 
     .testimonial-scroll::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.25);
       border-radius: 999px;
     }
 
     .testimonial-scroll::-webkit-scrollbar-thumb {
-      background: var(--teal);
+      background: white;
       border-radius: 999px;
     }
 
@@ -1167,9 +1186,9 @@
       min-height: 300px;
       padding: 32px 32px 30px;
       border-radius: 28px;
-      background: rgba(255, 255, 255, 0.90);
-      border: 1px solid rgba(23, 32, 42, 0.09);
-      box-shadow: 0 22px 58px rgba(23, 32, 42, 0.10);
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      box-shadow: 0 22px 58px rgba(23, 32, 42, 0.16);
       backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
@@ -1359,13 +1378,6 @@
       box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.10);
     }
 
-    .form-note {
-      color: var(--text-soft);
-      font-size: 13px;
-      font-weight: 600;
-      margin-top: 14px;
-    }
-
     /* FAQ */
     .faq {
       background: #faf7fb;
@@ -1427,16 +1439,18 @@
     }
 
     .faq-icon {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       background: var(--teal-light);
       color: var(--teal-dark);
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
       font-family: "Plus Jakarta Sans", sans-serif;
-      font-size: 18px;
+      font-size: 20px;
+      line-height: 1;
       font-weight: 900;
       transition: 0.18s ease;
     }
@@ -1456,7 +1470,7 @@
     }
 
     .faq-item.is-open .faq-answer {
-      max-height: 180px;
+      max-height: 200px;
     }
 
     .faq-item.is-open .faq-icon {
@@ -1533,6 +1547,9 @@
     .footer-contact {
       display: grid;
       gap: 10px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 14.5px;
+      font-weight: 700;
     }
 
     .footer-bottom {
@@ -1794,6 +1811,15 @@
         min-height: 130px;
       }
 
+      .testimonial-top {
+        display: grid;
+        align-items: start;
+      }
+
+      .review-controls {
+        justify-content: flex-start;
+      }
+
       .form-row {
         grid-template-columns: 1fr;
         gap: 0;
@@ -1962,11 +1988,8 @@
           <li><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#how-it-works">How It Works</a></li>
-          <li><a href="#why-us">Why Us</a></li>
           <li><a href="#testimonials">Reviews</a></li>
-          <li><a href="#quote">Quote</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#quote">Contact</a></li>
         </ul>
 
         <div class="nav-buttons">
@@ -1991,11 +2014,8 @@
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#why-us">Why Us</a>
         <a href="#testimonials">Reviews</a>
-        <a href="#quote">Quote</a>
-        <a href="#faq">FAQ</a>
+        <a href="#quote">Contact</a>
         <a href="tel:5035094850" class="mobile-call">Call 503-509-4850</a>
       </div>
     </div>
@@ -2227,14 +2247,14 @@
       <div class="container-wide">
         <div class="how-heading">
           <p class="how-kicker">How We Work</p>
-          <h2 class="how-title">Our four-step <span>care process</span></h2>
+          <h2 class="how-title">Our four-step <span class="blue-word">care process</span></h2>
           <p class="how-copy">
             Getting care started should feel simple. We learn what your loved one needs, build a clear plan, and begin dependable support at home.
           </p>
         </div>
 
         <div class="process-grid">
-          <article class="process-card featured-step">
+          <article class="process-card">
             <div class="process-icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M8 13h24v16H18l-8 7v-7H8z"/>
@@ -2365,15 +2385,22 @@
 
     <section class="testimonials" id="testimonials">
       <div class="container">
-        <div class="testimonial-heading">
-          <p class="testimonial-kicker">Testimonials</p>
-          <h2 class="testimonial-title">What Our <span>Clients Say</span></h2>
-          <p class="testimonial-sub">
-            Placeholder reviews for now. These can be swapped with real family testimonials once you have the final wording.
-          </p>
+        <div class="testimonial-top">
+          <div class="testimonial-heading">
+            <p class="testimonial-kicker">Testimonials</p>
+            <h2 class="testimonial-title">What Our <span>Clients Say</span></h2>
+            <p class="testimonial-sub">
+              Placeholder reviews for now. These can be swapped with real family testimonials once you have the final wording.
+            </p>
+          </div>
+
+          <div class="review-controls">
+            <button class="review-btn" id="reviewPrev" type="button" aria-label="Previous review">‹</button>
+            <button class="review-btn" id="reviewNext" type="button" aria-label="Next review">›</button>
+          </div>
         </div>
 
-        <div class="testimonial-scroll">
+        <div class="testimonial-scroll" id="testimonialScroll">
           <article class="testimonial-card">
             <div>
               <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
@@ -2495,6 +2522,7 @@
               <div class="form-field">
                 <label for="care-type">Type of Care</label>
                 <select id="care-type">
+                  <option>All of the above</option>
                   <option>Daily living support</option>
                   <option>Transportation</option>
                   <option>Hospital visits</option>
@@ -2510,7 +2538,6 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Submit Request</button>
-            <p class="form-note">Placeholder form only. Connect this to Wix, Formspree, Netlify Forms, or your backend before launch.</p>
           </form>
         </div>
       </div>
@@ -2528,43 +2555,63 @@
           </div>
 
           <div class="faq-list">
-            <div class="faq-item is-open">
+            <div class="faq-item">
               <button class="faq-question" type="button">
-                What areas do you serve?
+                Can you help after a hospital visit?
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>We serve Salem, Keizer, Woodburn, and surrounding communities. If you are nearby, call and we can confirm availability.</p>
+                <p>Yes. We can help with the transition back home, daily routines, transportation needs, and extra support while your loved one recovers.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                What services do you provide?
+                Can you help with errands and appointments?
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Services may include daily living support, companionship, transportation, walking assistance, pet help, hospital visits, and custom support based on the client’s needs.</p>
+                <p>Yes. Transportation and appointment support can be included depending on the care plan and scheduling needs.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                Do you create custom care plans?
+                Can you help with pets and walking?
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>Yes. Care plans are built around the client’s routine, family preferences, schedule, and level of support needed.</p>
+                <p>Yes. Light pet help and walking assistance can be part of the care plan when it helps the client stay comfortable and supported at home.</p>
               </div>
             </div>
 
             <div class="faq-item">
               <button class="faq-question" type="button">
-                How do we get started?
+                How flexible is the schedule?
                 <span class="faq-icon">+</span>
               </button>
               <div class="faq-answer">
-                <p>The easiest first step is to call for a consultation. From there, we can discuss needs, scheduling, and the best care setup.</p>
+                <p>Scheduling is based on the client’s needs, family preferences, and caregiver availability. The best first step is calling to talk through the situation.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                Is this care only for seniors?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>The main focus is senior in-home care, but you can call to ask about specific situations that may need personal support at home.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                What is the fastest way to get started?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>The fastest way is to call for a consultation or submit the quick quote form. From there, we can discuss needs, schedule, and next steps.</p>
               </div>
             </div>
           </div>
@@ -2661,6 +2708,27 @@
         item.classList.toggle("is-open");
       });
     });
+
+    const testimonialScroll = document.getElementById("testimonialScroll");
+    const reviewPrev = document.getElementById("reviewPrev");
+    const reviewNext = document.getElementById("reviewNext");
+
+    function scrollReviews(direction) {
+      if (!testimonialScroll) return;
+
+      const card = testimonialScroll.querySelector(".testimonial-card");
+      const cardWidth = card ? card.offsetWidth + 26 : 420;
+
+      testimonialScroll.scrollBy({
+        left: direction * cardWidth,
+        behavior: "smooth"
+      });
+    }
+
+    if (reviewPrev && reviewNext) {
+      reviewPrev.addEventListener("click", () => scrollReviews(-1));
+      reviewNext.addEventListener("click", () => scrollReviews(1));
+    }
   </script>
 </body>
 </html>
