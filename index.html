@@ -200,9 +200,9 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(238, 250, 250, 0.78) 0%, rgba(238, 250, 250, 0.58) 42%, rgba(238, 250, 250, 0.22) 100%),
+        linear-gradient(90deg, rgba(246, 253, 253, 0.84) 0%, rgba(236, 250, 250, 0.66) 42%, rgba(236, 250, 250, 0.20) 100%),
         url("./ChatGPT Image May 12, 2026, 08_49_21 PM.png") center center / cover no-repeat;
-      padding: 82px 0 90px;
+      padding: 96px 0 104px;
     }
 
     .hero-grid {
@@ -213,7 +213,7 @@
     }
 
     .hero-content {
-      max-width: 650px;
+      max-width: 680px;
     }
 
     .hero-eyebrow {
@@ -239,21 +239,29 @@
 
     .hero-title {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(56px, 6.6vw, 86px);
-      line-height: 0.96;
+      font-size: clamp(60px, 7vw, 92px);
+      line-height: 0.94;
       font-weight: 700;
-      letter-spacing: -0.055em;
-      margin-bottom: 22px;
-      color: #102033;
-      max-width: 700px;
-      text-shadow: 0 2px 18px rgba(255, 255, 255, 0.55);
+      letter-spacing: -0.06em;
+      margin-bottom: 24px;
+      color: #0b1d31;
+      max-width: 760px;
+      text-shadow:
+        0 2px 0 rgba(255, 255, 255, 0.55),
+        0 18px 42px rgba(21, 155, 154, 0.22);
+    }
+
+    .hero-title span {
+      color: var(--teal-dark);
+      font-style: italic;
+      font-weight: 500;
     }
 
     .hero-sub {
       max-width: 585px;
       color: #33414f;
       font-size: clamp(17px, 1.45vw, 19px);
-      font-weight: 600;
+      font-weight: 650;
       line-height: 1.75;
       margin-bottom: 30px;
     }
@@ -391,29 +399,29 @@
     /* ABOUT SECTION */
     .about {
       background: white;
-      padding: 96px 0 108px;
+      padding: 98px 0 108px;
       position: relative;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(420px, 1fr) minmax(0, 1fr);
-      gap: clamp(54px, 6vw, 86px);
+      grid-template-columns: minmax(520px, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(54px, 6vw, 90px);
       align-items: center;
     }
 
     .about-visual {
       position: relative;
-      min-height: 420px;
+      min-height: 500px;
     }
 
     .about-image-wrap {
-      position: relative;
+      position: absolute;
+      inset: 0;
       overflow: hidden;
-      border-radius: 28px;
-      min-height: 390px;
+      border-radius: 30px;
       background: url("./Medical-Assistant-Takes-Elderly-Patient-Outside.jpg") center center / cover no-repeat;
-      box-shadow: 0 26px 72px rgba(23, 32, 42, 0.11);
+      box-shadow: 0 28px 78px rgba(23, 32, 42, 0.13);
       border: 1px solid rgba(21, 155, 154, 0.12);
     }
 
@@ -421,13 +429,13 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.14));
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.12));
       pointer-events: none;
     }
 
     .about-exp-badge {
       position: absolute;
-      top: -38px;
+      top: -34px;
       left: -34px;
       width: 168px;
       height: 168px;
@@ -439,6 +447,7 @@
       text-align: center;
       box-shadow: 0 22px 44px rgba(21, 155, 154, 0.24);
       border: 8px solid white;
+      z-index: 2;
     }
 
     .about-exp-badge strong {
@@ -472,7 +481,7 @@
 
     .about-title {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(40px, 4.7vw, 58px);
+      font-size: clamp(42px, 4.8vw, 60px);
       line-height: 1.02;
       font-weight: 700;
       letter-spacing: -0.045em;
@@ -492,7 +501,7 @@
       align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      padding-bottom: 40px;
+      padding-bottom: 38px;
       border-bottom: 1px solid rgba(23, 32, 42, 0.10);
     }
 
@@ -506,18 +515,14 @@
     .about-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 34px;
+      gap: 32px;
       margin-top: 34px;
-    }
-
-    .stat {
-      min-width: 0;
     }
 
     .stat-number {
       font-family: "Fraunces", Georgia, serif;
       color: var(--text);
-      font-size: clamp(38px, 4vw, 52px);
+      font-size: clamp(36px, 3.5vw, 48px);
       line-height: 1;
       font-weight: 700;
       letter-spacing: -0.045em;
@@ -531,6 +536,139 @@
       line-height: 1.35;
     }
 
+    /* CARE CTA SECTION */
+    .care-cta {
+      background: #f7f5fb;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .trust-strip {
+      padding: 42px 0;
+      background: #faf9fd;
+      border-top: 1px solid rgba(23, 32, 42, 0.06);
+      border-bottom: 1px solid rgba(23, 32, 42, 0.06);
+    }
+
+    .trust-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      align-items: center;
+      gap: 22px;
+      text-align: center;
+    }
+
+    .mini-trust {
+      color: #273344;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      opacity: 0.76;
+    }
+
+    .mini-trust span {
+      display: block;
+      color: var(--teal-dark);
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 24px;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: -0.03em;
+      margin-bottom: 7px;
+    }
+
+    .care-banner {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(28, 22, 36, 0.78) 0%, rgba(28, 22, 36, 0.56) 48%, rgba(28, 22, 36, 0.22) 100%),
+        url("./e4bbdb94-613e-4e5b-9c68-2d8f71910d98.png") center center / cover no-repeat;
+    }
+
+    .care-banner-content {
+      max-width: 590px;
+      color: white;
+      padding: 86px 0;
+    }
+
+    .care-banner h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      margin-bottom: 22px;
+      max-width: 620px;
+    }
+
+    .care-banner p {
+      font-size: 17px;
+      font-weight: 650;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      margin-bottom: 28px;
+      max-width: 570px;
+    }
+
+    .btn-pink {
+      background: var(--pink);
+      color: white;
+      box-shadow: 0 16px 34px rgba(199, 91, 120, 0.25);
+    }
+
+    .btn-pink:hover {
+      background: #ad4863;
+      transform: translateY(-1px);
+    }
+
+    .care-stats {
+      background: var(--pink);
+      color: white;
+      padding: 34px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .care-stats::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,.5) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,.5) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,.5) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,.5) 75%);
+      background-size: 22px 22px;
+      background-position: 0 0, 0 11px, 11px -11px, -11px 0px;
+    }
+
+    .care-stats-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .care-stat-number {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .care-stat-label {
+      font-size: 15px;
+      font-weight: 850;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1120px) {
       .nav {
@@ -541,7 +679,8 @@
         display: none;
       }
 
-      .hero-grid {
+      .hero-grid,
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
@@ -549,12 +688,12 @@
         margin: 0 auto;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr;
+      .about-visual {
+        min-height: 460px;
       }
 
-      .about-visual {
-        max-width: 620px;
+      .trust-strip-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
@@ -612,11 +751,11 @@
       }
 
       .hero {
-        padding: 58px 0 70px;
+        padding: 66px 0 76px;
       }
 
       .hero-title {
-        font-size: clamp(46px, 12vw, 62px);
+        font-size: clamp(48px, 12vw, 64px);
       }
 
       .hero-visual {
@@ -646,11 +785,7 @@
       }
 
       .about-visual {
-        min-height: auto;
-      }
-
-      .about-image-wrap {
-        min-height: 360px;
+        min-height: 390px;
       }
 
       .about-exp-badge {
@@ -672,6 +807,18 @@
         grid-template-columns: 1fr;
         gap: 24px;
       }
+
+      .trust-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .care-banner {
+        min-height: 390px;
+      }
+
+      .care-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 520px) {
@@ -690,7 +837,7 @@
       }
 
       .hero {
-        padding: 46px 0 58px;
+        padding: 54px 0 64px;
       }
 
       .hero-cta-row {
@@ -724,12 +871,24 @@
         width: 100%;
       }
 
-      .about-image-wrap {
-        min-height: 320px;
+      .about-visual {
+        min-height: 330px;
       }
 
       .about-actions .btn {
         width: 100%;
+      }
+
+      .trust-strip-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .care-banner-content {
+        padding: 70px 0;
+      }
+
+      .care-stats-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -806,7 +965,7 @@
             </div>
 
             <h1 class="hero-title fade-up fade-up-2">
-              Compassionate Senior Care at Home.
+              Compassionate Senior Care <span>at Home.</span>
             </h1>
 
             <p class="hero-sub fade-up fade-up-3">
@@ -916,6 +1075,59 @@
                 <div class="stat-number">Flexible</div>
                 <div class="stat-label">Care Plans & Scheduling</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="care-cta" id="services">
+      <div class="trust-strip">
+        <div class="container">
+          <div class="trust-strip-grid">
+            <div class="mini-trust"><span>Care</span>Personal Care</div>
+            <div class="mini-trust"><span>Meals</span>Meal Prep</div>
+            <div class="mini-trust"><span>Meds</span>Reminders</div>
+            <div class="mini-trust"><span>Home</span>Light Housekeeping</div>
+            <div class="mini-trust"><span>Time</span>Flexible Scheduling</div>
+            <div class="mini-trust"><span>Trust</span>Insured Care</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="care-banner">
+        <div class="container">
+          <div class="care-banner-content">
+            <h2>Personalized care for your loved ones.</h2>
+            <p>
+              From companionship and personal care to daily support around the home, Tender Hearts helps families feel confident their loved one is cared for with patience, respect, and dignity.
+            </p>
+            <a href="tel:5035094850" class="btn btn-pink">Call for a Free Consultation</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="care-stats">
+        <div class="container">
+          <div class="care-stats-grid">
+            <div class="care-stat">
+              <div class="care-stat-number">20+</div>
+              <div class="care-stat-label">Years Experience</div>
+            </div>
+
+            <div class="care-stat">
+              <div class="care-stat-number">CPR</div>
+              <div class="care-stat-label">Certified Caregivers</div>
+            </div>
+
+            <div class="care-stat">
+              <div class="care-stat-number">24/7</div>
+              <div class="care-stat-label">Flexible Availability</div>
+            </div>
+
+            <div class="care-stat">
+              <div class="care-stat-number">Local</div>
+              <div class="care-stat-label">Oregon Family Care</div>
             </div>
           </div>
         </div>
