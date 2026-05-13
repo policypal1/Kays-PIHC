@@ -80,9 +80,9 @@
     .nav {
       min-height: 76px;
       display: grid;
-      grid-template-columns: 180px 1fr 260px;
+      grid-template-columns: 160px 1fr 220px;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
     }
 
     .logo-placeholder {
@@ -107,16 +107,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 28px;
+      gap: 20px;
       list-style: none;
     }
 
     .nav-links a {
       color: var(--text-soft);
       text-decoration: none;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 750;
       transition: color 0.18s ease;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -292,7 +293,6 @@
       font-size: 15.5px;
     }
 
-    /* HERO VISUAL */
     .hero-visual {
       position: relative;
       width: 100%;
@@ -384,7 +384,7 @@
 
     .trust-card-1 {
       top: 78px;
-      left: 78px;
+      left: 24px;
     }
 
     .trust-card-2 {
@@ -775,7 +775,7 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0.50) 52%, rgba(255, 255, 255, 0.34) 100%),
         url("./Top-Things-To-Know-About-Home-Health-Care-After-a-Hospitalization.jpg") center center / cover no-repeat;
       padding: 104px 0 112px;
     }
@@ -820,17 +820,17 @@
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 26px;
+      grid-template-columns: repeat(4, minmax(250px, 1fr));
+      gap: 24px;
       margin-top: 44px;
     }
 
     .process-card {
       position: relative;
-      min-height: 225px;
-      padding: 30px 28px 34px;
-      background: rgba(255, 255, 255, 0.94);
-      border-radius: 24px;
+      min-height: 205px;
+      padding: 28px 26px 32px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 22px;
       box-shadow: 0 18px 50px rgba(23, 32, 42, 0.10);
       border: 1px solid rgba(23, 32, 42, 0.05);
       overflow: hidden;
@@ -849,13 +849,13 @@
       right: 0;
       bottom: 0;
       height: 6px;
-      background: linear-gradient(90deg, var(--teal), var(--pink));
+      background: linear-gradient(90deg, var(--teal), var(--teal-dark));
     }
 
     .process-icon {
-      width: 46px;
-      height: 46px;
-      margin-bottom: 22px;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 20px;
       color: var(--teal);
     }
 
@@ -867,7 +867,7 @@
     .process-card h3 {
       font-family: "Fraunces", Georgia, serif;
       color: var(--text);
-      font-size: 26px;
+      font-size: 25px;
       line-height: 1.05;
       letter-spacing: -0.035em;
       margin-bottom: 12px;
@@ -875,29 +875,29 @@
 
     .process-card p {
       color: var(--text-soft);
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 600;
-      line-height: 1.6;
+      line-height: 1.58;
     }
 
     .process-line {
       position: relative;
       z-index: 1;
-      margin-top: 34px;
+      margin-top: 32px;
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 26px;
+      grid-template-columns: repeat(4, minmax(250px, 1fr));
+      gap: 24px;
       align-items: center;
     }
 
     .process-line::before {
       content: "";
       position: absolute;
-      left: 10%;
-      right: 10%;
+      left: 12.5%;
+      right: 12.5%;
       top: 50%;
       height: 1px;
-      background: rgba(23, 32, 42, 0.22);
+      background: rgba(14, 116, 115, 0.30);
       transform: translateY(-50%);
     }
 
@@ -905,8 +905,8 @@
       position: relative;
       z-index: 2;
       justify-self: center;
-      width: 23px;
-      height: 23px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -917,10 +917,152 @@
       box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.92);
     }
 
+    /* WHY US */
+    .why-us {
+      background: #faf7fb;
+      padding: 104px 0 114px;
+      overflow: hidden;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(520px, 1.05fr);
+      gap: clamp(54px, 7vw, 96px);
+      align-items: center;
+    }
+
+    .why-content {
+      max-width: 610px;
+    }
+
+    .why-kicker {
+      display: inline-block;
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 900;
+      font-style: italic;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      margin-bottom: 20px;
+    }
+
+    .why-title {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(44px, 5vw, 64px);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .why-intro {
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 600;
+      max-width: 570px;
+      margin-bottom: 34px;
+    }
+
+    .why-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .why-item {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .why-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--teal);
+      color: white;
+      box-shadow: 0 16px 28px rgba(21, 155, 154, 0.20);
+    }
+
+    .why-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .why-item h3 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 26px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .why-item p {
+      color: var(--text-soft);
+      font-size: 15.5px;
+      line-height: 1.65;
+      font-weight: 600;
+    }
+
+    .why-visual {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .why-image {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: url("./Top-Things-To-Know-About-Home-Health-Care-After-a-Hospitalization.jpg") center center / cover no-repeat;
+      box-shadow: 0 28px 78px rgba(23, 32, 42, 0.13);
+    }
+
+    .why-card {
+      position: absolute;
+      right: -38px;
+      bottom: -30px;
+      width: 310px;
+      min-height: 150px;
+      border-radius: 10px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.16) 0 2px, transparent 3px),
+        linear-gradient(135deg, var(--teal), var(--teal-dark));
+      background-size: 28px 28px, auto;
+      color: white;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 28px;
+      box-shadow: 0 26px 54px rgba(14, 116, 115, 0.24);
+      border: 8px solid #faf7fb;
+    }
+
+    .why-card strong {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 56px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      margin-bottom: 12px;
+    }
+
+    .why-card span {
+      display: block;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 1120px) {
       .nav {
-        grid-template-columns: 160px 1fr 190px;
+        grid-template-columns: 150px 1fr 180px;
       }
 
       .nav-buttons .btn-ghost {
@@ -928,7 +1070,8 @@
       }
 
       .hero-grid,
-      .about-grid {
+      .about-grid,
+      .why-grid {
         grid-template-columns: 1fr;
       }
 
@@ -957,12 +1100,17 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .process-grid,
+      .process-line {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
       }
 
       .process-line {
         display: none;
+      }
+
+      .why-visual {
+        max-width: 720px;
       }
     }
 
@@ -1054,7 +1202,7 @@
 
       .trust-card-1 {
         top: 48px;
-        left: 12px;
+        left: -18px;
       }
 
       .trust-card-2 {
@@ -1125,6 +1273,25 @@
 
       .how-it-works {
         padding: 78px 0 88px;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-us {
+        padding: 78px 0 88px;
+      }
+
+      .why-visual {
+        min-height: 390px;
+      }
+
+      .why-card {
+        right: -18px;
+        bottom: -20px;
+        width: 250px;
+        min-height: 130px;
       }
     }
 
@@ -1213,8 +1380,21 @@
         padding: 24px;
       }
 
-      .process-grid {
+      .why-item {
         grid-template-columns: 1fr;
+      }
+
+      .why-visual {
+        min-height: 330px;
+      }
+
+      .why-card {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 18px;
+        border: 0;
       }
     }
 
@@ -1251,6 +1431,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#why-us">Why Us</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
 
@@ -1277,6 +1458,7 @@
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#how-it-works">How It Works</a>
+        <a href="#why-us">Why Us</a>
         <a href="#contact">Contact</a>
         <a href="tel:5035094850" class="mobile-call">Call 503-509-4850</a>
       </div>
@@ -1534,9 +1716,9 @@
           <article class="process-card">
             <div class="process-icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="10" y="12" width="24" height="28"/>
-                <path d="M16 8v8M28 8v8M10 20h24"/>
-                <circle cx="34" cy="14" r="6"/>
+                <rect x="10" y="13" width="28" height="27" rx="2"/>
+                <path d="M16 9v8M32 9v8M10 21h28"/>
+                <path d="M17 28h5M26 28h5M17 34h5"/>
               </svg>
             </div>
             <h3>Scheduling</h3>
@@ -1559,9 +1741,9 @@
           <article class="process-card">
             <div class="process-icon">
               <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 8h20v32H14z"/>
-                <path d="M20 16h8M20 23h8M20 30h5"/>
-                <path d="M33 29l4 4 7-9"/>
+                <rect x="12" y="8" width="24" height="32" rx="2"/>
+                <path d="M18 17h12M18 24h12M18 31h7"/>
+                <path d="M31 32l3 3 7-8"/>
               </svg>
             </div>
             <h3>Begin Care</h3>
@@ -1574,6 +1756,76 @@
           <div class="process-dot">2</div>
           <div class="process-dot">3</div>
           <div class="process-dot">4</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-us" id="why-us">
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-content">
+            <p class="why-kicker">Why Choose Us</p>
+
+            <h2 class="why-title">
+              In-home care with a personal touch.
+            </h2>
+
+            <p class="why-intro">
+              Families choose Tender Hearts because care should feel dependable, respectful, and personal. We focus on comfort, communication, and support that fits each client’s real life.
+            </p>
+
+            <div class="why-list">
+              <div class="why-item">
+                <div class="why-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 21s-7-4.5-9.5-9C.8 8.7 2.6 5 6 5c2 0 3.4 1.1 4 2.3C10.6 6.1 12 5 14 5c3.4 0 5.2 3.7 3.5 7-2.5 4.5-9.5 9-9.5 9z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Care built around the person</h3>
+                  <p>Every client has different routines, preferences, and needs, so the care plan is shaped around the individual.</p>
+                </div>
+              </div>
+
+              <div class="why-item">
+                <div class="why-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                    <path d="M21 12a9 9 0 1 1-5.3-8.2"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Peace of mind for families</h3>
+                  <p>Families get dependable help, clear communication, and a caregiver who treats their loved one with dignity.</p>
+                </div>
+              </div>
+
+              <div class="why-item">
+                <div class="why-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 11 12 4l9 7"/>
+                    <path d="M5 10v10h14V10"/>
+                    <path d="M9 20v-6h6v6"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3>Comfort at home</h3>
+                  <p>Our goal is to help seniors stay safe, supported, and independent in the place they know best.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="why-visual">
+            <div class="why-image"></div>
+
+            <div class="why-card">
+              <div>
+                <strong>Local</strong>
+                <span>Care for Salem, Keizer & Woodburn families</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
