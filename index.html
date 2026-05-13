@@ -62,7 +62,6 @@
       margin: 0 auto;
     }
 
-    /* HEADER */
     .header {
       position: sticky;
       top: 0;
@@ -208,7 +207,6 @@
       display: none;
     }
 
-    /* HERO */
     .hero {
       position: relative;
       overflow: hidden;
@@ -397,7 +395,6 @@
       left: 26px;
     }
 
-    /* ABOUT */
     .about {
       background: white;
       padding: 90px 0 94px;
@@ -544,7 +541,6 @@
       line-height: 1.35;
     }
 
-    /* CTA */
     .care-cta {
       background: #f7fbfb;
       position: relative;
@@ -622,7 +618,6 @@
       color: rgba(255, 255, 255, 0.88);
     }
 
-    /* SERVICES */
     .services {
       background: #faf7fb;
       padding: 100px 0 112px;
@@ -770,7 +765,6 @@
     .service-transportation { --service-img: url("./ChatGPT Image May 13, 2026, 06_32_11 AM.png"); }
     .service-respite { --service-img: url("./b800144c-42b4-482e-af57-41a27e99274f.png"); }
 
-    /* HOW IT WORKS */
     .how-it-works {
       position: relative;
       overflow: hidden;
@@ -922,7 +916,6 @@
       box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.34);
     }
 
-    /* WHY US */
     .why-us {
       background: #faf7fb;
       padding: 104px 0 114px;
@@ -1068,7 +1061,6 @@
       line-height: 1.25;
     }
 
-    /* TESTIMONIALS */
     .testimonials {
       position: relative;
       overflow: hidden;
@@ -1257,7 +1249,6 @@
       font-weight: 900;
     }
 
-    /* CONTACT FORM */
     .contact-section {
       position: relative;
       overflow: hidden;
@@ -1419,7 +1410,6 @@
       line-height: 1.5;
     }
 
-    /* FAQ */
     .faq {
       background: #faf7fb;
       padding: 100px 0 110px;
@@ -1520,7 +1510,6 @@
       color: white;
     }
 
-    /* FOOTER */
     .footer {
       background: #102033;
       color: white;
@@ -1626,7 +1615,6 @@
       transform: translateY(-1px);
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1120px) {
       .nav {
         grid-template-columns: 180px 1fr 180px;
@@ -1799,7 +1787,7 @@
 
       .trust-card-2 {
         top: 235px;
-        right: -14px;
+        right: -22px;
       }
 
       .trust-card-3 {
@@ -1957,7 +1945,7 @@
         justify-content: center;
         align-items: center;
         gap: 14px;
-        margin-top: 10px;
+        margin-top: 12px;
       }
 
       .service-carousel-btn {
@@ -1983,7 +1971,7 @@
         justify-content: center;
         align-items: center;
         gap: 8px;
-        margin-top: 16px;
+        padding: 0 6px;
       }
 
       .service-dot {
@@ -2049,6 +2037,7 @@
         display: block;
         width: 100%;
         max-width: 610px;
+        order: 1;
       }
 
       .why-mobile-heading .why-intro {
@@ -2058,6 +2047,7 @@
       .why-content {
         width: 100%;
         max-width: none;
+        order: 3;
       }
 
       .why-content > .why-kicker,
@@ -2070,6 +2060,7 @@
         width: 100%;
         min-height: 390px;
         max-width: none;
+        order: 2;
       }
 
       .why-image {
@@ -2265,7 +2256,7 @@
 
       .trust-card-2 {
         top: 205px;
-        right: -20px;
+        right: -28px;
         z-index: 6;
       }
 
@@ -2739,16 +2730,17 @@
 
         <div class="service-carousel-controls" aria-label="Service carousel controls">
           <button class="service-carousel-btn" id="servicesPrev" type="button" aria-label="Previous service">‹</button>
-          <button class="service-carousel-btn" id="servicesNext" type="button" aria-label="Next service">›</button>
-        </div>
 
-        <div class="service-carousel-dots" id="serviceDots" aria-label="Service carousel pagination">
-          <button class="service-dot is-active" type="button" aria-label="View service 1"></button>
-          <button class="service-dot" type="button" aria-label="View service 2"></button>
-          <button class="service-dot" type="button" aria-label="View service 3"></button>
-          <button class="service-dot" type="button" aria-label="View service 4"></button>
-          <button class="service-dot" type="button" aria-label="View service 5"></button>
-          <button class="service-dot" type="button" aria-label="View service 6"></button>
+          <div class="service-carousel-dots" id="serviceDots" aria-label="Service carousel pagination">
+            <button class="service-dot is-active" type="button" aria-label="View service 1"></button>
+            <button class="service-dot" type="button" aria-label="View service 2"></button>
+            <button class="service-dot" type="button" aria-label="View service 3"></button>
+            <button class="service-dot" type="button" aria-label="View service 4"></button>
+            <button class="service-dot" type="button" aria-label="View service 5"></button>
+            <button class="service-dot" type="button" aria-label="View service 6"></button>
+          </div>
+
+          <button class="service-carousel-btn" id="servicesNext" type="button" aria-label="Next service">›</button>
         </div>
       </div>
     </section>
