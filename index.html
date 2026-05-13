@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Tender Hearts In-Home Care | Senior Care in Salem, Keizer & Woodburn</title>
-  <meta name="description" content="Tender Hearts In-Home Care provides compassionate senior care in Salem, Keizer, Woodburn, and surrounding Oregon communities." />
+  <title>Tender Hearts In-Home Care</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,18 +13,16 @@
     :root {
       --teal: #159b9a;
       --teal-dark: #0e7473;
-      --hero-blue: #ddf4f2;
       --pink: #c75b78;
-      --pink-soft: #f9e6ec;
+      --red-soft: #ffe4e8;
+      --red-text: #ba3f57;
       --white: #ffffff;
-      --cream: #fbf8f3;
       --text: #17202a;
-      --text-soft: #4a5660;
-      --text-muted: #74808c;
-      --border: rgba(14, 116, 115, 0.14);
-      --shadow-sm: 0 8px 22px rgba(23, 32, 42, 0.06);
-      --shadow-md: 0 18px 46px rgba(23, 32, 42, 0.12);
-      --shadow-lg: 0 28px 80px rgba(14, 116, 115, 0.18);
+      --text-soft: #52606d;
+      --border: rgba(23, 32, 42, 0.08);
+      --shadow-sm: 0 8px 18px rgba(23, 32, 42, 0.06);
+      --shadow-md: 0 18px 40px rgba(23, 32, 42, 0.10);
+      --shadow-lg: 0 30px 80px rgba(14, 116, 115, 0.16);
     }
 
     * {
@@ -42,14 +38,14 @@
     body {
       font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text);
-      background: var(--white);
+      background: #fff;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -61,92 +57,57 @@
     .header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid transparent;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(14px);
-      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+      border-bottom: 1px solid transparent;
+      transition: 0.22s ease;
     }
 
     .header.is-scrolled {
-      border-bottom-color: rgba(23, 32, 42, 0.08);
-      box-shadow: 0 8px 24px rgba(23, 32, 42, 0.06);
+      border-bottom-color: var(--border);
+      box-shadow: 0 8px 22px rgba(23, 32, 42, 0.06);
     }
 
     .nav {
       min-height: 78px;
-      display: flex;
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 18px;
     }
 
-    .brand {
+    .logo-placeholder {
+      justify-self: start;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      color: var(--text);
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: var(--teal);
-      color: var(--white);
-      box-shadow: 0 12px 28px rgba(21, 155, 154, 0.22);
-    }
-
-    .brand-mark svg {
-      width: 23px;
-      height: 23px;
-    }
-
-    .brand-text {
-      display: grid;
-      line-height: 1.05;
-    }
-
-    .brand-name {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 20px;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-tag {
-      margin-top: 4px;
-      color: var(--text-muted);
-      font-size: 11px;
-      font-weight: 700;
+      justify-content: center;
+      padding: 10px 18px;
+      background: var(--red-soft);
+      color: var(--red-text);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.13em;
-    }
-
-    .nav-right,
-    .nav-links,
-    .nav-buttons {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-right {
-      gap: 34px;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(186, 63, 87, 0.16);
+      white-space: nowrap;
     }
 
     .nav-links {
-      gap: 30px;
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
       list-style: none;
     }
 
     .nav-links a {
-      color: var(--text-soft);
       text-decoration: none;
+      color: var(--text-soft);
       font-size: 15px;
-      font-weight: 650;
+      font-weight: 700;
       transition: color 0.18s ease;
     }
 
@@ -155,6 +116,9 @@
     }
 
     .nav-buttons {
+      justify-self: end;
+      display: flex;
+      align-items: center;
       gap: 10px;
     }
 
@@ -162,46 +126,43 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 8px;
+      padding: 12px 20px;
       border-radius: 999px;
-      border: 0;
-      padding: 12px 22px;
-      color: inherit;
       text-decoration: none;
-      font-family: inherit;
-      font-size: 14.5px;
+      border: 0;
+      font-size: 14px;
       font-weight: 800;
-      line-height: 1;
-      cursor: pointer;
       white-space: nowrap;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+      transition: 0.18s ease;
     }
 
     .btn svg {
-      width: 17px;
-      height: 17px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--teal-dark);
+      border: 1.5px solid rgba(21, 155, 154, 0.18);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.96);
+      transform: translateY(-1px);
     }
 
     .btn-primary {
-      color: var(--white);
       background: var(--teal);
-      box-shadow: 0 14px 30px rgba(21, 155, 154, 0.22);
+      color: white;
+      box-shadow: 0 14px 28px rgba(21, 155, 154, 0.22);
     }
 
     .btn-primary:hover {
       background: var(--teal-dark);
       transform: translateY(-1px);
-      box-shadow: 0 18px 36px rgba(14, 116, 115, 0.26);
-    }
-
-    .btn-ghost {
-      color: var(--teal-dark);
-      background: transparent;
-      border: 1.5px solid rgba(21, 155, 154, 0.22);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(21, 155, 154, 0.08);
     }
 
     .menu-toggle {
@@ -210,7 +171,7 @@
       height: 42px;
       border-radius: 12px;
       border: 1px solid rgba(23, 32, 42, 0.12);
-      background: var(--white);
+      background: white;
       cursor: pointer;
     }
 
@@ -219,8 +180,8 @@
       width: 18px;
       height: 2px;
       margin: 4px auto;
-      border-radius: 2px;
       background: var(--text);
+      border-radius: 99px;
     }
 
     .mobile-menu {
@@ -231,224 +192,194 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: var(--hero-blue);
-      min-height: calc(100vh - 78px);
-      display: flex;
-      align-items: center;
-      padding: 78px 0 96px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 520px;
-      height: 520px;
-      right: -240px;
-      top: -250px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.34);
-      pointer-events: none;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      left: -190px;
-      bottom: -190px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.24);
-      pointer-events: none;
+      background:
+        linear-gradient(rgba(227, 243, 242, 0.78), rgba(227, 243, 242, 0.78)),
+        url("./ChatGPT Image May 12, 2026, 08_49_21 PM.png") center center / cover no-repeat;
+      padding: 42px 0 56px;
     }
 
     .hero-grid {
-      position: relative;
-      z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(390px, 0.98fr);
+      grid-template-columns: minmax(0, 1fr) minmax(400px, 500px);
       align-items: center;
-      gap: clamp(44px, 7vw, 92px);
+      gap: clamp(32px, 5vw, 76px);
     }
 
     .hero-content {
-      max-width: 650px;
+      max-width: 610px;
     }
 
     .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 26px;
-      padding: 8px 15px 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(14, 116, 115, 0.12);
+      display: inline-block;
       color: var(--teal-dark);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 800;
-      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 6px;
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--teal);
-      box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.12);
+    .hero-eyebrow::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--teal-dark);
+      border-radius: 99px;
     }
 
     .hero-title {
       font-family: "Fraunces", Georgia, serif;
-      max-width: 620px;
-      color: var(--text);
-      font-size: clamp(45px, 6vw, 76px);
-      font-weight: 650;
+      font-size: clamp(48px, 6vw, 76px);
       line-height: 0.98;
+      font-weight: 650;
       letter-spacing: -0.045em;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      color: #111827;
+      max-width: 700px;
     }
 
     .hero-sub {
-      max-width: 570px;
+      max-width: 560px;
       color: var(--text-soft);
-      font-size: clamp(16.5px, 1.5vw, 19px);
-      line-height: 1.72;
-      margin-bottom: 34px;
+      font-size: clamp(16px, 1.4vw, 19px);
+      line-height: 1.75;
+      margin-bottom: 28px;
     }
 
     .hero-cta-row {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .btn-hero {
-      padding: 18px 30px;
-      font-size: 16px;
+      padding: 17px 28px;
+      font-size: 15.5px;
     }
 
-    /* HERO IMAGE AREA */
+    /* HERO VISUAL */
     .hero-visual {
       position: relative;
       width: 100%;
       max-width: 500px;
+      min-height: 500px;
       margin-left: auto;
-      min-height: 590px;
     }
 
     .nurse-card {
       position: absolute;
       inset: 0;
-      border-radius: 34px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0.18)),
-        rgba(255, 255, 255, 0.38);
-      border: 1px solid rgba(255, 255, 255, 0.68);
-      box-shadow: var(--shadow-lg);
       overflow: hidden;
+      border-radius: 34px;
+      background: rgba(255, 255, 255, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(5px);
     }
 
     .nurse-card::before {
       content: "";
       position: absolute;
-      inset: 18px;
-      z-index: 1;
-      border: 1px solid rgba(14, 116, 115, 0.12);
+      inset: 16px;
       border-radius: 24px;
+      border: 1px solid rgba(14, 116, 115, 0.10);
+      z-index: 2;
       pointer-events: none;
     }
 
     .nurse-img {
       position: absolute;
       left: 50%;
-      bottom: 0;
-      width: 96%;
-      height: 100%;
+      bottom: -8px;
       transform: translateX(-50%);
+      width: 90%;
+      height: 112%;
       object-fit: contain;
-      object-position: bottom center;
-      filter: drop-shadow(0 24px 36px rgba(23, 32, 42, 0.16));
+      object-position: center bottom;
+      filter: drop-shadow(0 24px 34px rgba(23, 32, 42, 0.14));
     }
 
-    /* PROFESSIONAL FLOATING TRUST CARDS */
     .trust-card {
       position: absolute;
       z-index: 5;
       display: grid;
       grid-template-columns: auto 1fr;
+      gap: 12px;
       align-items: start;
-      gap: 13px;
-      width: 250px;
-      padding: 16px 17px;
+      width: 230px;
+      padding: 14px 15px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(23, 32, 42, 0.06);
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(14, 116, 115, 0.12);
       box-shadow: var(--shadow-md);
       backdrop-filter: blur(14px);
     }
 
     .trust-check {
-      width: 34px;
-      height: 34px;
-      border-radius: 11px;
+      width: 31px;
+      height: 31px;
+      border-radius: 10px;
       display: grid;
       place-items: center;
-      color: var(--teal-dark);
       background: rgba(21, 155, 154, 0.10);
+      color: var(--teal-dark);
+      flex-shrink: 0;
     }
 
     .trust-check svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
     }
 
     .trust-label {
       color: var(--pink);
       font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
       line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-weight: 900;
       margin-bottom: 7px;
     }
 
     .trust-main {
       font-family: "Fraunces", Georgia, serif;
-      color: var(--text);
-      font-size: 22px;
+      font-size: 20px;
+      line-height: 1.03;
       font-weight: 700;
-      line-height: 1.05;
+      color: var(--text);
       letter-spacing: -0.02em;
     }
 
     .trust-sub {
-      margin-top: 5px;
+      margin-top: 4px;
       color: var(--text-soft);
-      font-size: 12.5px;
+      font-size: 12px;
+      line-height: 1.35;
       font-weight: 600;
-      line-height: 1.36;
     }
 
     .trust-card-1 {
-      top: 7%;
-      left: -11%;
+      top: 8%;
+      left: -7%;
     }
 
     .trust-card-2 {
-      top: 43%;
-      right: -13%;
+      top: 45%;
+      right: -12%;
     }
 
     .trust-card-3 {
-      bottom: 8%;
-      left: -5%;
+      bottom: 10%;
+      left: -1%;
     }
 
-    /* ABOUT SECTION KEPT SIMPLE FOR NOW */
+    /* ABOUT PLACEHOLDER */
     .about {
-      background: var(--white);
-      padding: 90px 0;
+      background: white;
+      padding: 80px 0;
     }
 
     .about-placeholder-section {
@@ -480,40 +411,58 @@
 
     /* RESPONSIVE */
     @media (max-width: 1100px) {
+      .nav {
+        grid-template-columns: 160px 1fr 190px;
+      }
+
+      .nav-buttons .btn-ghost {
+        display: none;
+      }
+
       .hero-grid {
         grid-template-columns: 1fr;
       }
 
+      .hero-content {
+        max-width: 100%;
+      }
+
       .hero-visual {
         margin: 0 auto;
-        max-width: 470px;
       }
 
       .trust-card-1 {
-        left: -4%;
+        left: -3%;
       }
 
       .trust-card-2 {
-        right: -4%;
+        right: -5%;
       }
 
       .trust-card-3 {
-        left: 3%;
+        left: 4%;
       }
     }
 
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
       .container {
-        width: min(100% - 40px, 1220px);
+        width: min(100% - 36px, 1220px);
       }
 
       .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         min-height: 72px;
       }
 
       .nav-links,
       .nav-buttons .btn-ghost {
         display: none;
+      }
+
+      .nav-buttons {
+        gap: 10px;
       }
 
       .menu-toggle {
@@ -544,17 +493,54 @@
 
       .mobile-call {
         background: var(--teal);
-        color: var(--white) !important;
+        color: #fff !important;
         text-align: center;
       }
 
       .hero {
-        min-height: auto;
-        padding: 56px 0 72px;
+        padding: 30px 0 42px;
       }
 
       .hero-title {
-        font-size: clamp(42px, 12vw, 58px);
+        font-size: clamp(42px, 11vw, 58px);
+      }
+
+      .hero-visual {
+        min-height: 430px;
+        max-width: 390px;
+      }
+
+      .trust-card {
+        width: 215px;
+        padding: 13px;
+      }
+
+      .trust-main {
+        font-size: 18px;
+      }
+
+      .trust-sub {
+        font-size: 11.5px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 26px, 1220px);
+      }
+
+      .logo-placeholder {
+        font-size: 11px;
+        padding: 9px 14px;
+      }
+
+      .nav-buttons .btn-primary {
+        padding: 11px 14px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 24px 0 36px;
       }
 
       .hero-cta-row {
@@ -563,58 +549,6 @@
 
       .btn-hero {
         width: 100%;
-      }
-
-      .hero-visual {
-        min-height: 520px;
-        max-width: 390px;
-      }
-
-      .trust-card {
-        width: 225px;
-        padding: 14px;
-      }
-
-      .trust-main {
-        font-size: 19px;
-      }
-
-      .trust-sub {
-        font-size: 11.5px;
-      }
-
-      .trust-card-1 {
-        top: 5%;
-        left: -5%;
-      }
-
-      .trust-card-2 {
-        top: 42%;
-        right: -5%;
-      }
-
-      .trust-card-3 {
-        bottom: 6%;
-        left: 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        width: min(100% - 32px, 1220px);
-      }
-
-      .brand-name {
-        font-size: 17px;
-      }
-
-      .brand-tag {
-        font-size: 10px;
-      }
-
-      .nav-buttons .btn-primary {
-        padding: 11px 14px;
-        font-size: 13px;
       }
 
       .hero-visual {
@@ -636,7 +570,6 @@
       }
     }
 
-    /* ANIMATIONS */
     @media (prefers-reduced-motion: no-preference) {
       .fade-up {
         opacity: 0;
@@ -644,21 +577,10 @@
         animation: fadeUp 0.7s ease-out forwards;
       }
 
-      .fade-up-1 {
-        animation-delay: 0.04s;
-      }
-
-      .fade-up-2 {
-        animation-delay: 0.14s;
-      }
-
-      .fade-up-3 {
-        animation-delay: 0.24s;
-      }
-
-      .fade-up-4 {
-        animation-delay: 0.34s;
-      }
+      .fade-up-1 { animation-delay: 0.04s; }
+      .fade-up-2 { animation-delay: 0.14s; }
+      .fade-up-3 { animation-delay: 0.24s; }
+      .fade-up-4 { animation-delay: 0.34s; }
 
       @keyframes fadeUp {
         to {
@@ -669,48 +591,34 @@
     }
   </style>
 </head>
-
 <body>
   <header class="header" id="siteHeader">
     <div class="container">
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#" class="brand" aria-label="Tender Hearts home">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 21s-7-4.5-9.5-9C.8 8.7 2.6 5 6 5c2 0 3.4 1.1 4 2.3C10.6 6.1 12 5 14 5c3.4 0 5.2 3.7 3.5 7-2.5 4.5-9.5 9-9.5 9z"/>
+        <div class="logo-placeholder">Add Logo</div>
+
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+          <a href="#services" class="btn btn-ghost">View Services</a>
+
+          <a href="tel:5035094850" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
             </svg>
-          </span>
+            Call Now
+          </a>
 
-          <span class="brand-text">
-            <span class="brand-name">Tender Hearts</span>
-            <span class="brand-tag">In-Home Care</span>
-          </span>
-        </a>
-
-        <div class="nav-right">
-          <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-
-          <div class="nav-buttons">
-            <a href="#services" class="btn btn-ghost">View Services</a>
-
-            <a href="tel:5035094850" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
-              </svg>
-              Call Now
-            </a>
-
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
       </nav>
 
@@ -730,12 +638,11 @@
         <div class="hero-grid">
           <div class="hero-content">
             <div class="hero-eyebrow fade-up fade-up-1">
-              <span class="dot"></span>
               Welcome to Tender Hearts
             </div>
 
             <h1 class="hero-title fade-up fade-up-2">
-              Compassionate Care at Home.
+              Compassionate In-Home Care for the People Who Matter Most.
             </h1>
 
             <p class="hero-sub fade-up fade-up-3">
