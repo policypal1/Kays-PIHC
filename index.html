@@ -592,23 +592,14 @@
 
     .care-stats {
       background:
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18) 0 2px, transparent 3px),
-        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.12) 0 2px, transparent 3px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.24) 0 2px, transparent 2.5px),
         linear-gradient(135deg, var(--teal) 0%, var(--teal-dark) 100%);
-      background-size: 42px 42px, 64px 64px, auto;
+      background-size: 22px 22px, auto;
+      background-position: center center, center center;
       color: white;
       padding: 34px 0;
       position: relative;
       overflow: hidden;
-    }
-
-    .care-stats::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.09) 45%, transparent 70%);
-      pointer-events: none;
     }
 
     .care-stats-grid {
@@ -1127,6 +1118,18 @@
 
     .testimonial-slider-wrap {
       position: relative;
+      overflow: visible;
+    }
+
+    .testimonial-viewport {
+      overflow: hidden;
+      padding: 10px 0;
+    }
+
+    .testimonial-track {
+      display: flex;
+      gap: 26px;
+      will-change: transform;
     }
 
     .review-controls {
@@ -1169,21 +1172,6 @@
       margin-right: -27px;
     }
 
-    .testimonial-scroll {
-      display: flex;
-      gap: 26px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding: 10px 0;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .testimonial-scroll::-webkit-scrollbar {
-      display: none;
-    }
-
     .testimonial-card {
       position: relative;
       flex: 0 0 calc((100% - 52px) / 3);
@@ -1198,7 +1186,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      scroll-snap-align: start;
     }
 
     .hearts {
@@ -1269,20 +1256,8 @@
     .quote-section {
       position: relative;
       overflow: hidden;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(21, 155, 154, 0.12), transparent 28%),
-        radial-gradient(circle at 88% 22%, rgba(199, 91, 120, 0.12), transparent 28%),
-        linear-gradient(135deg, #f7fbfb 0%, #ffffff 46%, #faf7fb 100%);
+      background: #ffffff;
       padding: 108px 0 116px;
-    }
-
-    .quote-section::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(120deg, transparent 0%, rgba(21, 155, 154, 0.05) 46%, transparent 76%);
-      pointer-events: none;
     }
 
     .quote-grid {
@@ -1366,19 +1341,13 @@
       overflow: hidden;
       padding: 40px;
       border-radius: 32px;
-      background: rgba(255, 255, 255, 0.96);
-      border: 1px solid rgba(21, 155, 154, 0.16);
+      background:
+        radial-gradient(circle at 20% 12%, rgba(255, 255, 255, 0.64), transparent 30%),
+        linear-gradient(135deg, #e8f9f8 0%, #d6f3f2 55%, #cceceb 100%);
+      border: 1px solid rgba(21, 155, 154, 0.20);
       box-shadow:
-        0 34px 90px rgba(14, 116, 115, 0.17),
+        0 34px 90px rgba(14, 116, 115, 0.18),
         0 10px 30px rgba(23, 32, 42, 0.07);
-    }
-
-    .quote-form::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 8px;
-      background: linear-gradient(90deg, var(--teal), var(--pink));
     }
 
     .form-row {
@@ -1404,7 +1373,7 @@
     .form-field textarea {
       width: 100%;
       border: 1px solid rgba(23, 32, 42, 0.12);
-      background: #fbfdfd;
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 14px;
       padding: 14px 15px;
       font: inherit;
@@ -1421,8 +1390,8 @@
     .form-field input:focus,
     .form-field select:focus,
     .form-field textarea:focus {
-      border-color: rgba(21, 155, 154, 0.55);
-      box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.10);
+      border-color: rgba(21, 155, 154, 0.60);
+      box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.14);
       background: white;
     }
 
@@ -1623,11 +1592,33 @@
       padding-top: 24px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 18px;
       flex-wrap: wrap;
       color: rgba(255, 255, 255, 0.60);
       font-size: 13px;
       font-weight: 700;
+    }
+
+    .built-by-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      color: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      text-decoration: none;
+      font-size: 12.5px;
+      font-weight: 900;
+      transition: 0.18s ease;
+    }
+
+    .built-by-badge:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: white;
+      transform: translateY(-1px);
     }
 
     /* RESPONSIVE */
@@ -2005,7 +1996,7 @@
       }
 
       .testimonial-card {
-        flex-basis: 86vw;
+        flex: 0 0 86vw;
         min-width: 280px;
         padding: 26px 24px;
       }
@@ -2483,86 +2474,88 @@
             <button class="review-btn next" id="reviewNext" type="button" aria-label="Next review">›</button>
           </div>
 
-          <div class="testimonial-scroll" id="testimonialScroll">
-            <article class="testimonial-card">
-              <div>
-                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-                <p class="testimonial-quote">
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”
-                </p>
-              </div>
-
-              <div class="testimonial-bottom">
-                <div class="reviewer">
-                  <div class="reviewer-avatar">MJ</div>
-                  <div>
-                    <div class="reviewer-name">Martha James</div>
-                    <div class="reviewer-location">Salem, OR</div>
-                  </div>
+          <div class="testimonial-viewport">
+            <div class="testimonial-track" id="testimonialTrack">
+              <article class="testimonial-card">
+                <div>
+                  <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                  <p class="testimonial-quote">
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”
+                  </p>
                 </div>
-                <div class="quote-mark">”</div>
-              </div>
-            </article>
 
-            <article class="testimonial-card">
-              <div>
-                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-                <p class="testimonial-quote">
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.”
-                </p>
-              </div>
-
-              <div class="testimonial-bottom">
-                <div class="reviewer">
-                  <div class="reviewer-avatar">RK</div>
-                  <div>
-                    <div class="reviewer-name">Robert King</div>
-                    <div class="reviewer-location">Keizer, OR</div>
+                <div class="testimonial-bottom">
+                  <div class="reviewer">
+                    <div class="reviewer-avatar">MJ</div>
+                    <div>
+                      <div class="reviewer-name">Martha James</div>
+                      <div class="reviewer-location">Salem, OR</div>
+                    </div>
                   </div>
+                  <div class="quote-mark">”</div>
                 </div>
-                <div class="quote-mark">”</div>
-              </div>
-            </article>
+              </article>
 
-            <article class="testimonial-card">
-              <div>
-                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-                <p class="testimonial-quote">
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.”
-                </p>
-              </div>
+              <article class="testimonial-card">
+                <div>
+                  <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                  <p class="testimonial-quote">
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.”
+                  </p>
+                </div>
 
-              <div class="testimonial-bottom">
-                <div class="reviewer">
-                  <div class="reviewer-avatar">EP</div>
-                  <div>
-                    <div class="reviewer-name">Elaine Parker</div>
-                    <div class="reviewer-location">Woodburn, OR</div>
+                <div class="testimonial-bottom">
+                  <div class="reviewer">
+                    <div class="reviewer-avatar">RK</div>
+                    <div>
+                      <div class="reviewer-name">Robert King</div>
+                      <div class="reviewer-location">Keizer, OR</div>
+                    </div>
                   </div>
+                  <div class="quote-mark">”</div>
                 </div>
-                <div class="quote-mark">”</div>
-              </div>
-            </article>
+              </article>
 
-            <article class="testimonial-card">
-              <div>
-                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-                <p class="testimonial-quote">
-                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.”
-                </p>
-              </div>
+              <article class="testimonial-card">
+                <div>
+                  <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                  <p class="testimonial-quote">
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.”
+                  </p>
+                </div>
 
-              <div class="testimonial-bottom">
-                <div class="reviewer">
-                  <div class="reviewer-avatar">LS</div>
-                  <div>
-                    <div class="reviewer-name">Linda Smith</div>
-                    <div class="reviewer-location">Salem, OR</div>
+                <div class="testimonial-bottom">
+                  <div class="reviewer">
+                    <div class="reviewer-avatar">EP</div>
+                    <div>
+                      <div class="reviewer-name">Elaine Parker</div>
+                      <div class="reviewer-location">Woodburn, OR</div>
+                    </div>
                   </div>
+                  <div class="quote-mark">”</div>
                 </div>
-                <div class="quote-mark">”</div>
-              </div>
-            </article>
+              </article>
+
+              <article class="testimonial-card">
+                <div>
+                  <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                  <p class="testimonial-quote">
+                    “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.”
+                  </p>
+                </div>
+
+                <div class="testimonial-bottom">
+                  <div class="reviewer">
+                    <div class="reviewer-avatar">LS</div>
+                    <div>
+                      <div class="reviewer-name">Linda Smith</div>
+                      <div class="reviewer-location">Salem, OR</div>
+                    </div>
+                  </div>
+                  <div class="quote-mark">”</div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
@@ -2780,7 +2773,9 @@
 
       <div class="footer-bottom">
         <span>© 2026 Tender Hearts In-Home Care. All rights reserved.</span>
-        <span>Care with dignity, comfort, and compassion.</span>
+        <a href="https://kumpulamarketing.co/" target="_blank" rel="noopener noreferrer" class="built-by-badge">
+          Built by Kumpula Marketing
+        </a>
       </div>
     </div>
   </footer>
@@ -2827,41 +2822,64 @@
       });
     });
 
-    const testimonialScroll = document.getElementById("testimonialScroll");
+    const testimonialTrack = document.getElementById("testimonialTrack");
     const reviewPrev = document.getElementById("reviewPrev");
     const reviewNext = document.getElementById("reviewNext");
+    let reviewAnimating = false;
 
     function getReviewStep() {
-      const card = testimonialScroll?.querySelector(".testimonial-card");
-      return card ? card.offsetWidth + 26 : 420;
+      if (!testimonialTrack) return 420;
+
+      const card = testimonialTrack.querySelector(".testimonial-card");
+      const styles = window.getComputedStyle(testimonialTrack);
+      const gap = parseFloat(styles.gap) || 26;
+
+      return card ? card.offsetWidth + gap : 420;
     }
 
-    function scrollReviews(direction) {
-      if (!testimonialScroll) return;
+    function slideReviewsNext() {
+      if (!testimonialTrack || reviewAnimating) return;
 
+      reviewAnimating = true;
       const step = getReviewStep();
-      const maxScroll = testimonialScroll.scrollWidth - testimonialScroll.clientWidth;
-      const current = testimonialScroll.scrollLeft;
 
-      if (direction > 0 && current + step >= maxScroll - 10) {
-        testimonialScroll.scrollTo({ left: 0, behavior: "smooth" });
-        return;
-      }
+      testimonialTrack.style.transition = "transform 0.38s ease";
+      testimonialTrack.style.transform = `translateX(-${step}px)`;
 
-      if (direction < 0 && current <= 10) {
-        testimonialScroll.scrollTo({ left: maxScroll, behavior: "smooth" });
-        return;
-      }
+      testimonialTrack.addEventListener("transitionend", () => {
+        testimonialTrack.appendChild(testimonialTrack.firstElementChild);
+        testimonialTrack.style.transition = "none";
+        testimonialTrack.style.transform = "translateX(0)";
+        testimonialTrack.offsetHeight;
+        reviewAnimating = false;
+      }, { once: true });
+    }
 
-      testimonialScroll.scrollBy({
-        left: direction * step,
-        behavior: "smooth"
+    function slideReviewsPrev() {
+      if (!testimonialTrack || reviewAnimating) return;
+
+      reviewAnimating = true;
+      const step = getReviewStep();
+
+      testimonialTrack.insertBefore(testimonialTrack.lastElementChild, testimonialTrack.firstElementChild);
+      testimonialTrack.style.transition = "none";
+      testimonialTrack.style.transform = `translateX(-${step}px)`;
+      testimonialTrack.offsetHeight;
+
+      requestAnimationFrame(() => {
+        testimonialTrack.style.transition = "transform 0.38s ease";
+        testimonialTrack.style.transform = "translateX(0)";
       });
+
+      testimonialTrack.addEventListener("transitionend", () => {
+        testimonialTrack.style.transition = "none";
+        reviewAnimating = false;
+      }, { once: true });
     }
 
     if (reviewPrev && reviewNext) {
-      reviewPrev.addEventListener("click", () => scrollReviews(-1));
-      reviewNext.addEventListener("click", () => scrollReviews(1));
+      reviewPrev.addEventListener("click", slideReviewsPrev);
+      reviewNext.addEventListener("click", slideReviewsNext);
     }
   </script>
 </body>
