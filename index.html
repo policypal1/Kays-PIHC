@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Tender Hearts In-Home Care | Senior Care in Salem, Keizer & Woodburn</title>
+  <meta name="description" content="Tender Hearts In-Home Care provides compassionate senior care in Salem, Keizer, Woodburn, and surrounding Oregon communities." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --teal: #159b9a;
+      --teal-dark: #0e7473;
+      --hero-blue: #ddf4f2;
+      --pink: #c75b78;
+      --pink-soft: #f9e6ec;
+      --white: #ffffff;
+      --cream: #fbf8f3;
+      --text: #17202a;
+      --text-soft: #4a5660;
+      --text-muted: #74808c;
+      --border: rgba(14, 116, 115, 0.14);
+      --shadow-sm: 0 8px 22px rgba(23, 32, 42, 0.06);
+      --shadow-md: 0 18px 46px rgba(23, 32, 42, 0.12);
+      --shadow-lg: 0 28px 80px rgba(14, 116, 115, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 48px, 1220px);
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(14px);
+      transition: box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+
+    .header.is-scrolled {
+      border-bottom-color: rgba(23, 32, 42, 0.08);
+      box-shadow: 0 8px 24px rgba(23, 32, 42, 0.06);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(21, 155, 154, 0.22);
+    }
+
+    .brand-mark svg {
+      width: 23px;
+      height: 23px;
+    }
+
+    .brand-text {
+      display: grid;
+      line-height: 1.05;
+    }
+
+    .brand-name {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 20px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-tag {
+      margin-top: 4px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .nav-right,
+    .nav-links,
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-right {
+      gap: 34px;
+    }
+
+    .nav-links {
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-soft);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 650;
+      transition: color 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal-dark);
+    }
+
+    .nav-buttons {
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      border: 0;
+      padding: 12px 22px;
+      color: inherit;
+      text-decoration: none;
+      font-family: inherit;
+      font-size: 14.5px;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .btn svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--teal);
+      box-shadow: 0 14px 30px rgba(21, 155, 154, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 36px rgba(14, 116, 115, 0.26);
+    }
+
+    .btn-ghost {
+      color: var(--teal-dark);
+      background: transparent;
+      border: 1.5px solid rgba(21, 155, 154, 0.22);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(21, 155, 154, 0.08);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(23, 32, 42, 0.12);
+      background: var(--white);
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 4px auto;
+      border-radius: 2px;
+      background: var(--text);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--hero-blue);
+      min-height: calc(100vh - 78px);
+      display: flex;
+      align-items: center;
+      padding: 78px 0 96px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -240px;
+      top: -250px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.34);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      left: -190px;
+      bottom: -190px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.24);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(390px, 0.98fr);
+      align-items: center;
+      gap: clamp(44px, 7vw, 92px);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 26px;
+      padding: 8px 15px 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(14, 116, 115, 0.12);
+      color: var(--teal-dark);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.12);
+    }
+
+    .hero-title {
+      font-family: "Fraunces", Georgia, serif;
+      max-width: 620px;
+      color: var(--text);
+      font-size: clamp(45px, 6vw, 76px);
+      font-weight: 650;
+      line-height: 0.98;
+      letter-spacing: -0.045em;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      max-width: 570px;
+      color: var(--text-soft);
+      font-size: clamp(16.5px, 1.5vw, 19px);
+      line-height: 1.72;
+      margin-bottom: 34px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-hero {
+      padding: 18px 30px;
+      font-size: 16px;
+    }
+
+    /* HERO IMAGE AREA */
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin-left: auto;
+      min-height: 590px;
+    }
+
+    .nurse-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 34px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.44), rgba(255, 255, 255, 0.18)),
+        rgba(255, 255, 255, 0.38);
+      border: 1px solid rgba(255, 255, 255, 0.68);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .nurse-card::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      z-index: 1;
+      border: 1px solid rgba(14, 116, 115, 0.12);
+      border-radius: 24px;
+      pointer-events: none;
+    }
+
+    .nurse-img {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 96%;
+      height: 100%;
+      transform: translateX(-50%);
+      object-fit: contain;
+      object-position: bottom center;
+      filter: drop-shadow(0 24px 36px rgba(23, 32, 42, 0.16));
+    }
+
+    /* PROFESSIONAL FLOATING TRUST CARDS */
+    .trust-card {
+      position: absolute;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: start;
+      gap: 13px;
+      width: 250px;
+      padding: 16px 17px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(14, 116, 115, 0.12);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(14px);
+    }
+
+    .trust-check {
+      width: 34px;
+      height: 34px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: var(--teal-dark);
+      background: rgba(21, 155, 154, 0.10);
+    }
+
+    .trust-check svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .trust-label {
+      color: var(--pink);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .trust-main {
+      font-family: "Fraunces", Georgia, serif;
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .trust-sub {
+      margin-top: 5px;
+      color: var(--text-soft);
+      font-size: 12.5px;
+      font-weight: 600;
+      line-height: 1.36;
+    }
+
+    .trust-card-1 {
+      top: 7%;
+      left: -11%;
+    }
+
+    .trust-card-2 {
+      top: 43%;
+      right: -13%;
+    }
+
+    .trust-card-3 {
+      bottom: 8%;
+      left: -5%;
+    }
+
+    /* ABOUT SECTION KEPT SIMPLE FOR NOW */
+    .about {
+      background: var(--white);
+      padding: 90px 0;
+    }
+
+    .about-placeholder-section {
+      max-width: 760px;
+    }
+
+    .about-eyebrow {
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+
+    .about h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      color: var(--text-soft);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1100px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        margin: 0 auto;
+        max-width: 470px;
+      }
+
+      .trust-card-1 {
+        left: -4%;
+      }
+
+      .trust-card-2 {
+        right: -4%;
+      }
+
+      .trust-card-3 {
+        left: 3%;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .container {
+        width: min(100% - 40px, 1220px);
+      }
+
+      .nav {
+        min-height: 72px;
+      }
+
+      .nav-links,
+      .nav-buttons .btn-ghost {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .mobile-menu {
+        border-top: 1px solid rgba(23, 32, 42, 0.08);
+        padding: 10px 0 18px;
+      }
+
+      .mobile-menu.is-open {
+        display: grid;
+        gap: 8px;
+      }
+
+      .mobile-menu a {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 750;
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      .mobile-menu a:hover {
+        background: rgba(21, 155, 154, 0.08);
+      }
+
+      .mobile-call {
+        background: var(--teal);
+        color: var(--white) !important;
+        text-align: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 56px 0 72px;
+      }
+
+      .hero-title {
+        font-size: clamp(42px, 12vw, 58px);
+      }
+
+      .hero-cta-row {
+        align-items: stretch;
+      }
+
+      .btn-hero {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+        max-width: 390px;
+      }
+
+      .trust-card {
+        width: 225px;
+        padding: 14px;
+      }
+
+      .trust-main {
+        font-size: 19px;
+      }
+
+      .trust-sub {
+        font-size: 11.5px;
+      }
+
+      .trust-card-1 {
+        top: 5%;
+        left: -5%;
+      }
+
+      .trust-card-2 {
+        top: 42%;
+        right: -5%;
+      }
+
+      .trust-card-3 {
+        bottom: 6%;
+        left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 32px, 1220px);
+      }
+
+      .brand-name {
+        font-size: 17px;
+      }
+
+      .brand-tag {
+        font-size: 10px;
+      }
+
+      .nav-buttons .btn-primary {
+        padding: 11px 14px;
+        font-size: 13px;
+      }
+
+      .hero-visual {
+        display: grid;
+        gap: 10px;
+        min-height: auto;
+        max-width: 330px;
+      }
+
+      .nurse-card {
+        position: relative;
+        aspect-ratio: 4 / 5;
+      }
+
+      .trust-card {
+        position: relative;
+        inset: auto;
+        width: 100%;
+      }
+    }
+
+    /* ANIMATIONS */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-up {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: fadeUp 0.7s ease-out forwards;
+      }
+
+      .fade-up-1 {
+        animation-delay: 0.04s;
+      }
+
+      .fade-up-2 {
+        animation-delay: 0.14s;
+      }
+
+      .fade-up-3 {
+        animation-delay: 0.24s;
+      }
+
+      .fade-up-4 {
+        animation-delay: 0.34s;
+      }
+
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" id="siteHeader">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#" class="brand" aria-label="Tender Hearts home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 21s-7-4.5-9.5-9C.8 8.7 2.6 5 6 5c2 0 3.4 1.1 4 2.3C10.6 6.1 12 5 14 5c3.4 0 5.2 3.7 3.5 7-2.5 4.5-9.5 9-9.5 9z"/>
+            </svg>
+          </span>
+
+          <span class="brand-text">
+            <span class="brand-name">Tender Hearts</span>
+            <span class="brand-tag">In-Home Care</span>
+          </span>
+        </a>
+
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="nav-buttons">
+            <a href="#services" class="btn btn-ghost">View Services</a>
+
+            <a href="tel:5035094850" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Call Now
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:5035094850" class="mobile-call">Call 503-509-4850</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-eyebrow fade-up fade-up-1">
+              <span class="dot"></span>
+              Welcome to Tender Hearts
+            </div>
+
+            <h1 class="hero-title fade-up fade-up-2">
+              Compassionate Care at Home.
+            </h1>
+
+            <p class="hero-sub fade-up fade-up-3">
+              Helping seniors stay safe, supported, and independent with personalized in-home care throughout Salem, Keizer, Woodburn, and nearby communities.
+            </p>
+
+            <div class="hero-cta-row fade-up fade-up-4">
+              <a href="tel:5035094850" class="btn btn-primary btn-hero">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call for a Free Consultation
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual fade-up fade-up-3">
+            <div class="nurse-card">
+              <img src="./Untitled design (9).png" alt="Tender Hearts caregiver" class="nurse-img" />
+            </div>
+
+            <div class="trust-card trust-card-1">
+              <span class="trust-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <div>
+                <p class="trust-label">Experience</p>
+                <p class="trust-main">20+ Years</p>
+                <p class="trust-sub">Combined care experience</p>
+              </div>
+            </div>
+
+            <div class="trust-card trust-card-2">
+              <span class="trust-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <div>
+                <p class="trust-label">Care Plans</p>
+                <p class="trust-main">Personalized</p>
+                <p class="trust-sub">Built around each client</p>
+              </div>
+            </div>
+
+            <div class="trust-card trust-card-3">
+              <span class="trust-check" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 6 9 17l-5-5"/>
+                </svg>
+              </span>
+              <div>
+                <p class="trust-label">Verified Care</p>
+                <p class="trust-main">Insured</p>
+                <p class="trust-sub">Background-checked caregivers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-placeholder-section">
+        <p class="about-eyebrow">About Tender Hearts</p>
+        <h2>Care with dignity, comfort, and compassion.</h2>
+        <p>
+          This section is being kept for the next build step. We can design this after the hero is finished.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const header = document.getElementById("siteHeader");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    function updateHeaderState() {
+      if (window.scrollY > 8) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
+      }
+    }
+
+    window.addEventListener("scroll", updateHeaderState, { passive: true });
+    updateHeaderState();
+
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("is-open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("is-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.setAttribute("aria-label", "Open menu");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
