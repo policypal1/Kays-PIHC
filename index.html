@@ -668,14 +668,16 @@
     }
 
     .section-title span,
-    .testimonial-title span {
+    .testimonial-title span,
+    .quote-title span {
       color: var(--teal-dark);
       position: relative;
       white-space: nowrap;
     }
 
     .section-title span::after,
-    .testimonial-title span::after {
+    .testimonial-title span::after,
+    .quote-title span::after {
       content: "";
       position: absolute;
       left: 0;
@@ -1081,10 +1083,6 @@
     }
 
     .testimonial-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 28px;
       margin-bottom: 48px;
     }
 
@@ -1127,25 +1125,34 @@
       max-width: 820px;
     }
 
+    .testimonial-slider-wrap {
+      position: relative;
+    }
+
     .review-controls {
+      pointer-events: none;
+      position: absolute;
+      inset: 0;
+      z-index: 5;
       display: flex;
       align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
+      justify-content: space-between;
     }
 
     .review-btn {
-      width: 48px;
-      height: 48px;
+      pointer-events: auto;
+      width: 54px;
+      height: 54px;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.48);
-      background: rgba(255, 255, 255, 0.20);
+      background: rgba(255, 255, 255, 0.22);
       color: white;
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 900;
       cursor: pointer;
       transition: 0.18s ease;
       backdrop-filter: blur(10px);
+      box-shadow: 0 18px 38px rgba(23, 32, 42, 0.16);
     }
 
     .review-btn:hover {
@@ -1154,29 +1161,27 @@
       transform: translateY(-1px);
     }
 
+    .review-btn.prev {
+      margin-left: -27px;
+    }
+
+    .review-btn.next {
+      margin-right: -27px;
+    }
+
     .testimonial-scroll {
       display: flex;
       gap: 26px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
-      padding: 10px 0 26px;
-      scrollbar-width: thin;
-      scrollbar-color: white rgba(255, 255, 255, 0.25);
+      padding: 10px 0;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
     .testimonial-scroll::-webkit-scrollbar {
-      height: 10px;
-    }
-
-    .testimonial-scroll::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.25);
-      border-radius: 999px;
-    }
-
-    .testimonial-scroll::-webkit-scrollbar-thumb {
-      background: white;
-      border-radius: 999px;
+      display: none;
     }
 
     .testimonial-card {
@@ -1262,18 +1267,39 @@
 
     /* QUOTE FORM */
     .quote-section {
-      background: white;
-      padding: 104px 0 112px;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(21, 155, 154, 0.12), transparent 28%),
+        radial-gradient(circle at 88% 22%, rgba(199, 91, 120, 0.12), transparent 28%),
+        linear-gradient(135deg, #f7fbfb 0%, #ffffff 46%, #faf7fb 100%);
+      padding: 108px 0 116px;
+    }
+
+    .quote-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(21, 155, 154, 0.05) 46%, transparent 76%);
+      pointer-events: none;
     }
 
     .quote-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
       grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
       gap: clamp(48px, 7vw, 92px);
-      align-items: start;
+      align-items: center;
+    }
+
+    .quote-content {
+      max-width: 560px;
     }
 
     .quote-kicker {
+      display: inline-block;
       color: var(--pink);
       font-size: 13px;
       font-weight: 900;
@@ -1285,11 +1311,15 @@
 
     .quote-title {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(44px, 5vw, 64px);
+      font-size: clamp(44px, 5vw, 66px);
       line-height: 1.02;
       letter-spacing: -0.05em;
       color: var(--text);
       margin-bottom: 22px;
+    }
+
+    .quote-title span::after {
+      bottom: 7px;
     }
 
     .quote-copy {
@@ -1298,40 +1328,57 @@
       line-height: 1.75;
       font-weight: 600;
       max-width: 540px;
-      margin-bottom: 28px;
     }
 
-    .quote-contact-card {
-      padding: 24px;
-      border-radius: 22px;
-      background: var(--teal-light);
-      border: 1px solid rgba(21, 155, 154, 0.12);
-      max-width: 460px;
+    .quote-mini-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
     }
 
-    .quote-contact-card strong {
-      display: block;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 28px;
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-      margin-bottom: 8px;
+    .quote-mini-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       color: var(--text);
+      font-size: 15px;
+      font-weight: 800;
     }
 
-    .quote-contact-card a {
+    .quote-mini-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: var(--teal-light);
       color: var(--teal-dark);
-      font-weight: 900;
-      text-decoration: none;
-      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .quote-mini-check svg {
+      width: 15px;
+      height: 15px;
     }
 
     .quote-form {
-      padding: 34px;
-      border-radius: 28px;
-      background: #faf7fb;
-      border: 1px solid rgba(23, 32, 42, 0.08);
-      box-shadow: 0 22px 58px rgba(23, 32, 42, 0.08);
+      position: relative;
+      overflow: hidden;
+      padding: 40px;
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(21, 155, 154, 0.16);
+      box-shadow:
+        0 34px 90px rgba(14, 116, 115, 0.17),
+        0 10px 30px rgba(23, 32, 42, 0.07);
+    }
+
+    .quote-form::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 8px;
+      background: linear-gradient(90deg, var(--teal), var(--pink));
     }
 
     .form-row {
@@ -1357,7 +1404,7 @@
     .form-field textarea {
       width: 100%;
       border: 1px solid rgba(23, 32, 42, 0.12);
-      background: white;
+      background: #fbfdfd;
       border-radius: 14px;
       padding: 14px 15px;
       font: inherit;
@@ -1367,7 +1414,7 @@
     }
 
     .form-field textarea {
-      min-height: 120px;
+      min-height: 125px;
       resize: vertical;
     }
 
@@ -1376,6 +1423,26 @@
     .form-field textarea:focus {
       border-color: rgba(21, 155, 154, 0.55);
       box-shadow: 0 0 0 4px rgba(21, 155, 154, 0.10);
+      background: white;
+    }
+
+    .quote-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 4px;
+    }
+
+    .quote-form .btn {
+      padding: 15px 26px;
+    }
+
+    .quote-small-note {
+      color: var(--text-soft);
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.5;
     }
 
     /* FAQ */
@@ -1811,18 +1878,22 @@
         min-height: 130px;
       }
 
-      .testimonial-top {
-        display: grid;
-        align-items: start;
+      .review-btn.prev {
+        margin-left: -12px;
       }
 
-      .review-controls {
-        justify-content: flex-start;
+      .review-btn.next {
+        margin-right: -12px;
       }
 
       .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+      }
+
+      .quote-submit-row {
+        align-items: stretch;
+        flex-direction: column;
       }
 
       .footer-grid {
@@ -1947,8 +2018,19 @@
         font-size: 54px;
       }
 
+      .review-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+      }
+
       .quote-form {
-        padding: 24px;
+        padding: 28px 22px;
+        border-radius: 26px;
+      }
+
+      .quote-form .btn {
+        width: 100%;
       }
 
       .footer-bottom {
@@ -2393,93 +2475,95 @@
               Placeholder reviews for now. These can be swapped with real family testimonials once you have the final wording.
             </p>
           </div>
-
-          <div class="review-controls">
-            <button class="review-btn" id="reviewPrev" type="button" aria-label="Previous review">‹</button>
-            <button class="review-btn" id="reviewNext" type="button" aria-label="Next review">›</button>
-          </div>
         </div>
 
-        <div class="testimonial-scroll" id="testimonialScroll">
-          <article class="testimonial-card">
-            <div>
-              <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-              <p class="testimonial-quote">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”
-              </p>
-            </div>
+        <div class="testimonial-slider-wrap">
+          <div class="review-controls">
+            <button class="review-btn prev" id="reviewPrev" type="button" aria-label="Previous review">‹</button>
+            <button class="review-btn next" id="reviewNext" type="button" aria-label="Next review">›</button>
+          </div>
 
-            <div class="testimonial-bottom">
-              <div class="reviewer">
-                <div class="reviewer-avatar">MJ</div>
-                <div>
-                  <div class="reviewer-name">Martha James</div>
-                  <div class="reviewer-location">Salem, OR</div>
-                </div>
+          <div class="testimonial-scroll" id="testimonialScroll">
+            <article class="testimonial-card">
+              <div>
+                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                <p class="testimonial-quote">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”
+                </p>
               </div>
-              <div class="quote-mark">”</div>
-            </div>
-          </article>
 
-          <article class="testimonial-card">
-            <div>
-              <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-              <p class="testimonial-quote">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.”
-              </p>
-            </div>
-
-            <div class="testimonial-bottom">
-              <div class="reviewer">
-                <div class="reviewer-avatar">RK</div>
-                <div>
-                  <div class="reviewer-name">Robert King</div>
-                  <div class="reviewer-location">Keizer, OR</div>
+              <div class="testimonial-bottom">
+                <div class="reviewer">
+                  <div class="reviewer-avatar">MJ</div>
+                  <div>
+                    <div class="reviewer-name">Martha James</div>
+                    <div class="reviewer-location">Salem, OR</div>
+                  </div>
                 </div>
+                <div class="quote-mark">”</div>
               </div>
-              <div class="quote-mark">”</div>
-            </div>
-          </article>
+            </article>
 
-          <article class="testimonial-card">
-            <div>
-              <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-              <p class="testimonial-quote">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.”
-              </p>
-            </div>
+            <article class="testimonial-card">
+              <div>
+                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                <p class="testimonial-quote">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla.”
+                </p>
+              </div>
 
-            <div class="testimonial-bottom">
-              <div class="reviewer">
-                <div class="reviewer-avatar">EP</div>
-                <div>
-                  <div class="reviewer-name">Elaine Parker</div>
-                  <div class="reviewer-location">Woodburn, OR</div>
+              <div class="testimonial-bottom">
+                <div class="reviewer">
+                  <div class="reviewer-avatar">RK</div>
+                  <div>
+                    <div class="reviewer-name">Robert King</div>
+                    <div class="reviewer-location">Keizer, OR</div>
+                  </div>
                 </div>
+                <div class="quote-mark">”</div>
               </div>
-              <div class="quote-mark">”</div>
-            </div>
-          </article>
+            </article>
 
-          <article class="testimonial-card">
-            <div>
-              <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
-              <p class="testimonial-quote">
-                “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.”
-              </p>
-            </div>
+            <article class="testimonial-card">
+              <div>
+                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                <p class="testimonial-quote">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper.”
+                </p>
+              </div>
 
-            <div class="testimonial-bottom">
-              <div class="reviewer">
-                <div class="reviewer-avatar">LS</div>
-                <div>
-                  <div class="reviewer-name">Linda Smith</div>
-                  <div class="reviewer-location">Salem, OR</div>
+              <div class="testimonial-bottom">
+                <div class="reviewer">
+                  <div class="reviewer-avatar">EP</div>
+                  <div>
+                    <div class="reviewer-name">Elaine Parker</div>
+                    <div class="reviewer-location">Woodburn, OR</div>
+                  </div>
                 </div>
+                <div class="quote-mark">”</div>
               </div>
-              <div class="quote-mark">”</div>
-            </div>
-          </article>
+            </article>
+
+            <article class="testimonial-card">
+              <div>
+                <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
+                <p class="testimonial-quote">
+                  “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere consectetur est at lobortis.”
+                </p>
+              </div>
+
+              <div class="testimonial-bottom">
+                <div class="reviewer">
+                  <div class="reviewer-avatar">LS</div>
+                  <div>
+                    <div class="reviewer-name">Linda Smith</div>
+                    <div class="reviewer-location">Salem, OR</div>
+                  </div>
+                </div>
+                <div class="quote-mark">”</div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -2489,44 +2573,73 @@
         <div class="quote-grid">
           <div class="quote-content">
             <p class="quote-kicker">Request Care</p>
-            <h2 class="quote-title">Get a quick care quote.</h2>
+
+            <h2 class="quote-title">
+              Get a quick <span>care quote.</span>
+            </h2>
+
             <p class="quote-copy">
-              Tell us what kind of support your loved one needs. We’ll use this information to understand the situation and follow up with the next best step.
+              Tell us what kind of support your loved one needs. We’ll use this information to understand the situation, answer questions, and help you figure out the next best step.
             </p>
 
-            <div class="quote-contact-card">
-              <strong>Prefer to call?</strong>
-              <a href="tel:5035094850">503-509-4850</a>
+            <div class="quote-mini-list">
+              <div class="quote-mini-item">
+                <span class="quote-mini-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Personalized care plans
+              </div>
+
+              <div class="quote-mini-item">
+                <span class="quote-mini-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Flexible in-home support
+              </div>
+
+              <div class="quote-mini-item">
+                <span class="quote-mini-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </span>
+                Salem, Keizer, Woodburn & nearby areas
+              </div>
             </div>
           </div>
 
-          <form class="quote-form">
+          <form class="quote-form" id="careQuoteForm">
             <div class="form-row">
               <div class="form-field">
                 <label for="name">Your Name</label>
-                <input id="name" type="text" placeholder="Full name">
+                <input id="name" name="name" type="text" placeholder="Full name" required>
               </div>
 
               <div class="form-field">
                 <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" placeholder="503-000-0000">
+                <input id="phone" name="phone" type="tel" placeholder="503-000-0000" required>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-field">
                 <label for="location">City</label>
-                <input id="location" type="text" placeholder="Salem, Keizer, Woodburn...">
+                <input id="location" name="location" type="text" placeholder="Salem, Keizer, Woodburn...">
               </div>
 
               <div class="form-field">
                 <label for="care-type">Type of Care</label>
-                <select id="care-type">
+                <select id="care-type" name="careType">
                   <option>All of the above</option>
                   <option>Daily living support</option>
                   <option>Transportation</option>
                   <option>Hospital visits</option>
                   <option>Pet help</option>
+                  <option>Walking assistance</option>
                   <option>Custom care</option>
                 </select>
               </div>
@@ -2534,10 +2647,15 @@
 
             <div class="form-field">
               <label for="message">What do you need help with?</label>
-              <textarea id="message" placeholder="Tell us about the care needed, schedule, and any family concerns."></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about the care needed, schedule, and any family concerns."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit Request</button>
+            <div class="quote-submit-row">
+              <button type="submit" class="btn btn-primary">Submit Request</button>
+              <p class="quote-small-note">
+                We’ll review your request and follow up as soon as possible.
+              </p>
+            </div>
           </form>
         </div>
       </div>
@@ -2713,14 +2831,30 @@
     const reviewPrev = document.getElementById("reviewPrev");
     const reviewNext = document.getElementById("reviewNext");
 
+    function getReviewStep() {
+      const card = testimonialScroll?.querySelector(".testimonial-card");
+      return card ? card.offsetWidth + 26 : 420;
+    }
+
     function scrollReviews(direction) {
       if (!testimonialScroll) return;
 
-      const card = testimonialScroll.querySelector(".testimonial-card");
-      const cardWidth = card ? card.offsetWidth + 26 : 420;
+      const step = getReviewStep();
+      const maxScroll = testimonialScroll.scrollWidth - testimonialScroll.clientWidth;
+      const current = testimonialScroll.scrollLeft;
+
+      if (direction > 0 && current + step >= maxScroll - 10) {
+        testimonialScroll.scrollTo({ left: 0, behavior: "smooth" });
+        return;
+      }
+
+      if (direction < 0 && current <= 10) {
+        testimonialScroll.scrollTo({ left: maxScroll, behavior: "smooth" });
+        return;
+      }
 
       testimonialScroll.scrollBy({
-        left: direction * cardWidth,
+        left: direction * step,
         behavior: "smooth"
       });
     }
