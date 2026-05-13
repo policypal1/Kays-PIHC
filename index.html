@@ -3,26 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Tender Hearts In-Home Care</title>
+  <meta name="description" content="Tender Hearts In-Home Care provides compassionate personal in-home senior care throughout Salem, Keizer, Woodburn, and surrounding Oregon communities." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --teal: #159b9a;
       --teal-dark: #0e7473;
+      --teal-light: #ddf4f2;
       --pink: #c75b78;
-      --red-soft: #ffe4e8;
-      --red-text: #ba3f57;
+      --pink-soft: #f9e6ec;
+      --cream: #fbf8f3;
       --white: #ffffff;
       --text: #17202a;
       --text-soft: #52606d;
+      --text-muted: #74808c;
+      --red-soft: #ffe4e8;
+      --red-text: #ba3f57;
       --border: rgba(23, 32, 42, 0.08);
-      --shadow-sm: 0 8px 18px rgba(23, 32, 42, 0.06);
-      --shadow-md: 0 18px 40px rgba(23, 32, 42, 0.10);
-      --shadow-lg: 0 34px 90px rgba(14, 116, 115, 0.22);
+      --shadow-sm: 0 8px 20px rgba(23, 32, 42, 0.06);
+      --shadow-md: 0 18px 44px rgba(23, 32, 42, 0.12);
+      --shadow-lg: 0 32px 90px rgba(14, 116, 115, 0.22);
     }
 
     * {
@@ -58,7 +64,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-bottom: 1px solid transparent;
@@ -71,7 +77,7 @@
     }
 
     .nav {
-      min-height: 78px;
+      min-height: 76px;
       display: grid;
       grid-template-columns: 180px 1fr 260px;
       align-items: center;
@@ -88,7 +94,7 @@
       color: var(--red-text);
       border-radius: 999px;
       font-size: 13px;
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       border: 1px solid rgba(186, 63, 87, 0.16);
@@ -105,10 +111,10 @@
     }
 
     .nav-links a {
-      text-decoration: none;
       color: var(--text-soft);
+      text-decoration: none;
       font-size: 15px;
-      font-weight: 700;
+      font-weight: 750;
       transition: color 0.18s ease;
     }
 
@@ -133,7 +139,7 @@
       text-decoration: none;
       border: 0;
       font-size: 14px;
-      font-weight: 800;
+      font-weight: 900;
       white-space: nowrap;
       cursor: pointer;
       transition: 0.18s ease;
@@ -145,9 +151,9 @@
     }
 
     .btn-ghost {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.72);
       color: var(--teal-dark);
-      border: 1.5px solid rgba(21, 155, 154, 0.18);
+      border: 1.5px solid rgba(21, 155, 154, 0.20);
     }
 
     .btn-ghost:hover {
@@ -158,7 +164,7 @@
     .btn-primary {
       background: var(--teal);
       color: white;
-      box-shadow: 0 14px 28px rgba(21, 155, 154, 0.22);
+      box-shadow: 0 14px 28px rgba(21, 155, 154, 0.24);
     }
 
     .btn-primary:hover {
@@ -194,33 +200,31 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(rgba(214, 235, 245, 0.42), rgba(214, 235, 245, 0.42)),
+        linear-gradient(90deg, rgba(8, 48, 66, 0.68) 0%, rgba(8, 48, 66, 0.48) 38%, rgba(8, 48, 66, 0.18) 100%),
         url("./ChatGPT Image May 12, 2026, 08_49_21 PM.png") center center / cover no-repeat;
-      min-height: calc(100vh - 78px);
-      display: flex;
-      align-items: center;
-      padding: 86px 0 104px;
+      padding: 70px 0 76px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(400px, 520px);
+      grid-template-columns: minmax(0, 1fr) minmax(390px, 510px);
       align-items: center;
-      gap: clamp(36px, 5vw, 82px);
+      gap: clamp(34px, 5vw, 84px);
     }
 
     .hero-content {
-      max-width: 610px;
+      max-width: 650px;
     }
 
     .hero-eyebrow {
       display: inline-block;
-      color: var(--teal-dark);
+      color: rgba(255, 255, 255, 0.96);
       font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 20px;
+      font-weight: 900;
+      margin-bottom: 18px;
       position: relative;
-      padding-bottom: 6px;
+      padding-bottom: 7px;
+      text-shadow: 0 1px 14px rgba(0, 0, 0, 0.18);
     }
 
     .hero-eyebrow::after {
@@ -230,28 +234,30 @@
       bottom: 0;
       width: 100%;
       height: 2px;
-      background: var(--teal-dark);
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 99px;
     }
 
     .hero-title {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(46px, 5.4vw, 68px);
-      line-height: 1.02;
-      font-weight: 650;
-      letter-spacing: -0.04em;
-      margin-bottom: 20px;
-      color: #111827;
-      max-width: 620px;
-      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.18);
+      font-size: clamp(54px, 6.4vw, 82px);
+      line-height: 0.96;
+      font-weight: 700;
+      letter-spacing: -0.055em;
+      margin-bottom: 22px;
+      color: white;
+      max-width: 700px;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.20);
     }
 
     .hero-sub {
-      max-width: 560px;
-      color: #3f4b57;
-      font-size: clamp(16px, 1.4vw, 19px);
+      max-width: 585px;
+      color: rgba(255, 255, 255, 0.90);
+      font-size: clamp(17px, 1.45vw, 19px);
+      font-weight: 600;
       line-height: 1.75;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.16);
     }
 
     .hero-cta-row {
@@ -269,8 +275,8 @@
     .hero-visual {
       position: relative;
       width: 100%;
-      max-width: 520px;
-      min-height: 560px;
+      max-width: 510px;
+      min-height: 510px;
       margin-left: auto;
     }
 
@@ -279,8 +285,8 @@
       inset: 0;
       overflow: hidden;
       border-radius: 34px;
-      background: rgba(255, 255, 255, 0.34);
-      border: 1px solid rgba(255, 255, 255, 0.68);
+      background: rgba(255, 255, 255, 0.30);
+      border: 1px solid rgba(255, 255, 255, 0.66);
       box-shadow: var(--shadow-lg);
       backdrop-filter: blur(18px) saturate(145%);
       -webkit-backdrop-filter: blur(18px) saturate(145%);
@@ -292,7 +298,7 @@
       inset: 16px;
       border-radius: 24px;
       border: 1px solid rgba(255, 255, 255, 0.55);
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.07);
       z-index: 2;
       pointer-events: none;
     }
@@ -306,7 +312,7 @@
       height: 126%;
       object-fit: contain;
       object-position: center bottom;
-      filter: drop-shadow(0 24px 34px rgba(23, 32, 42, 0.14));
+      filter: drop-shadow(0 24px 34px rgba(23, 32, 42, 0.16));
     }
 
     .trust-card {
@@ -370,13 +376,13 @@
     }
 
     .trust-card-1 {
-      top: 9%;
-      left: -7%;
+      top: 8%;
+      left: -6%;
     }
 
     .trust-card-2 {
       top: 45%;
-      right: -12%;
+      right: -11%;
     }
 
     .trust-card-3 {
@@ -384,41 +390,155 @@
       left: -1%;
     }
 
-    /* ABOUT PLACEHOLDER */
+    /* ABOUT SECTION */
     .about {
       background: white;
-      padding: 80px 0;
+      padding: 96px 0 108px;
+      position: relative;
     }
 
-    .about-placeholder-section {
-      max-width: 760px;
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(420px, 1fr) minmax(0, 1fr);
+      gap: clamp(54px, 6vw, 86px);
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 420px;
+    }
+
+    .about-image-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      min-height: 390px;
+      background:
+        linear-gradient(145deg, rgba(221, 244, 242, 0.92), rgba(249, 230, 236, 0.72)),
+        url("./Untitled design (9).png") center bottom / contain no-repeat;
+      box-shadow: 0 26px 72px rgba(23, 32, 42, 0.11);
+      border: 1px solid rgba(21, 155, 154, 0.12);
+    }
+
+    .about-image-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(21, 155, 154, 0.16);
+      pointer-events: none;
+    }
+
+    .about-exp-badge {
+      position: absolute;
+      top: -38px;
+      left: -34px;
+      width: 168px;
+      height: 168px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      box-shadow: 0 22px 44px rgba(21, 155, 154, 0.24);
+      border: 8px solid white;
+    }
+
+    .about-exp-badge strong {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 48px;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+
+    .about-exp-badge span {
+      display: block;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.25;
+      margin-top: 8px;
+    }
+
+    .about-content {
+      max-width: 620px;
     }
 
     .about-eyebrow {
-      color: var(--pink);
+      color: var(--teal-dark);
       font-size: 13px;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      margin-bottom: 14px;
-    }
-
-    .about h2 {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(34px, 4vw, 50px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.14em;
       margin-bottom: 18px;
     }
 
-    .about p {
+    .about-title {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(40px, 4.7vw, 58px);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .about-copy {
       color: var(--text-soft);
       font-size: 17px;
-      line-height: 1.7;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .about-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(23, 32, 42, 0.10);
+    }
+
+    .about-phone {
+      color: var(--teal-dark);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+      margin-top: 34px;
+    }
+
+    .stat {
+      min-width: 0;
+    }
+
+    .stat-number {
+      font-family: "Fraunces", Georgia, serif;
+      color: var(--text);
+      font-size: clamp(38px, 4vw, 52px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+    }
+
+    .stat-label {
+      margin-top: 8px;
+      color: var(--teal-dark);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
     }
 
     /* RESPONSIVE */
-    @media (max-width: 1100px) {
+    @media (max-width: 1120px) {
       .nav {
         grid-template-columns: 160px 1fr 190px;
       }
@@ -431,24 +551,16 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-content {
-        max-width: 100%;
-      }
-
       .hero-visual {
         margin: 0 auto;
       }
 
-      .trust-card-1 {
-        left: -3%;
+      .about-grid {
+        grid-template-columns: 1fr;
       }
 
-      .trust-card-2 {
-        right: -5%;
-      }
-
-      .trust-card-3 {
-        left: 4%;
+      .about-visual {
+        max-width: 620px;
       }
     }
 
@@ -490,7 +602,7 @@
       .mobile-menu a {
         color: var(--text);
         text-decoration: none;
-        font-weight: 750;
+        font-weight: 800;
         padding: 12px 14px;
         border-radius: 12px;
       }
@@ -506,16 +618,15 @@
       }
 
       .hero {
-        min-height: auto;
-        padding: 60px 0 72px;
+        padding: 56px 0 64px;
       }
 
       .hero-title {
-        font-size: clamp(40px, 10vw, 56px);
+        font-size: clamp(46px, 12vw, 62px);
       }
 
       .hero-visual {
-        min-height: 480px;
+        min-height: 470px;
         max-width: 410px;
       }
 
@@ -534,6 +645,38 @@
 
       .trust-sub {
         font-size: 11.5px;
+      }
+
+      .about {
+        padding: 78px 0 88px;
+      }
+
+      .about-visual {
+        min-height: auto;
+      }
+
+      .about-image-wrap {
+        min-height: 360px;
+      }
+
+      .about-exp-badge {
+        width: 138px;
+        height: 138px;
+        top: -28px;
+        left: -18px;
+      }
+
+      .about-exp-badge strong {
+        font-size: 38px;
+      }
+
+      .about-exp-badge span {
+        font-size: 11px;
+      }
+
+      .about-stats {
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
     }
 
@@ -584,6 +727,14 @@
       .trust-card {
         position: relative;
         inset: auto;
+        width: 100%;
+      }
+
+      .about-image-wrap {
+        min-height: 320px;
+      }
+
+      .about-actions .btn {
         width: 100%;
       }
     }
@@ -725,19 +876,62 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <section class="about" id="about">
-    <div class="container">
-      <div class="about-placeholder-section">
-        <p class="about-eyebrow">About Tender Hearts</p>
-        <h2>Care with dignity, comfort, and compassion.</h2>
-        <p>
-          This section is being kept for the next build step. We can design this after the hero is finished.
-        </p>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="about-image-wrap"></div>
+
+            <div class="about-exp-badge">
+              <div>
+                <strong>20+</strong>
+                <span>Years of Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p class="about-eyebrow">About Tender Hearts</p>
+
+            <h2 class="about-title">
+              Care with dignity, comfort, and compassion.
+            </h2>
+
+            <p class="about-copy">
+              Tender Hearts provides compassionate, professional in-home care services for seniors who want to remain independent and supported in the comfort of their own homes.
+            </p>
+
+            <p class="about-copy">
+              Every care plan is personalized around the client’s needs, routine, and family preferences. From companionship and personal care to meal preparation, medication reminders, and light housekeeping, we focus on dependable care families can trust.
+            </p>
+
+            <div class="about-actions">
+              <a href="#services" class="btn btn-primary">View Our Services</a>
+              <a href="tel:5035094850" class="about-phone">Call 503-509-4850</a>
+            </div>
+
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">Years Combined Experience</div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-number">CPR</div>
+                <div class="stat-label">Certified Caregivers</div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-number">Local</div>
+                <div class="stat-label">Salem, Keizer & Woodburn</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <script>
     const header = document.getElementById("siteHeader");
