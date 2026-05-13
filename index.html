@@ -28,7 +28,7 @@
       --border: rgba(23, 32, 42, 0.08);
       --shadow-sm: 0 8px 20px rgba(23, 32, 42, 0.06);
       --shadow-md: 0 18px 44px rgba(23, 32, 42, 0.12);
-      --shadow-lg: 0 32px 90px rgba(14, 116, 115, 0.22);
+      --shadow-lg: 0 32px 90px rgba(14, 116, 115, 0.18);
     }
 
     * {
@@ -200,9 +200,9 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(8, 48, 66, 0.68) 0%, rgba(8, 48, 66, 0.48) 38%, rgba(8, 48, 66, 0.18) 100%),
+        linear-gradient(90deg, rgba(238, 250, 250, 0.78) 0%, rgba(238, 250, 250, 0.58) 42%, rgba(238, 250, 250, 0.22) 100%),
         url("./ChatGPT Image May 12, 2026, 08_49_21 PM.png") center center / cover no-repeat;
-      padding: 70px 0 76px;
+      padding: 82px 0 90px;
     }
 
     .hero-grid {
@@ -218,13 +218,12 @@
 
     .hero-eyebrow {
       display: inline-block;
-      color: rgba(255, 255, 255, 0.96);
+      color: var(--teal-dark);
       font-size: 14px;
       font-weight: 900;
       margin-bottom: 18px;
       position: relative;
       padding-bottom: 7px;
-      text-shadow: 0 1px 14px rgba(0, 0, 0, 0.18);
     }
 
     .hero-eyebrow::after {
@@ -234,30 +233,29 @@
       bottom: 0;
       width: 100%;
       height: 2px;
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--teal-dark);
       border-radius: 99px;
     }
 
     .hero-title {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(54px, 6.4vw, 82px);
+      font-size: clamp(56px, 6.6vw, 86px);
       line-height: 0.96;
       font-weight: 700;
       letter-spacing: -0.055em;
       margin-bottom: 22px;
-      color: white;
+      color: #102033;
       max-width: 700px;
-      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.20);
+      text-shadow: 0 2px 18px rgba(255, 255, 255, 0.55);
     }
 
     .hero-sub {
       max-width: 585px;
-      color: rgba(255, 255, 255, 0.90);
+      color: #33414f;
       font-size: clamp(17px, 1.45vw, 19px);
       font-weight: 600;
       line-height: 1.75;
       margin-bottom: 30px;
-      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.16);
     }
 
     .hero-cta-row {
@@ -276,7 +274,7 @@
       position: relative;
       width: 100%;
       max-width: 510px;
-      min-height: 510px;
+      min-height: 520px;
       margin-left: auto;
     }
 
@@ -285,8 +283,8 @@
       inset: 0;
       overflow: hidden;
       border-radius: 34px;
-      background: rgba(255, 255, 255, 0.30);
-      border: 1px solid rgba(255, 255, 255, 0.66);
+      background: rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(255, 255, 255, 0.70);
       box-shadow: var(--shadow-lg);
       backdrop-filter: blur(18px) saturate(145%);
       -webkit-backdrop-filter: blur(18px) saturate(145%);
@@ -414,19 +412,16 @@
       overflow: hidden;
       border-radius: 28px;
       min-height: 390px;
-      background:
-        linear-gradient(145deg, rgba(221, 244, 242, 0.92), rgba(249, 230, 236, 0.72)),
-        url("./Untitled design (9).png") center bottom / contain no-repeat;
+      background: url("./Medical-Assistant-Takes-Elderly-Patient-Outside.jpg") center center / cover no-repeat;
       box-shadow: 0 26px 72px rgba(23, 32, 42, 0.11);
       border: 1px solid rgba(21, 155, 154, 0.12);
     }
 
-    .about-image-wrap::before {
+    .about-image-wrap::after {
       content: "";
       position: absolute;
-      inset: 14px;
-      border-radius: 20px;
-      border: 1px solid rgba(21, 155, 154, 0.16);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.14));
       pointer-events: none;
     }
 
@@ -489,7 +484,7 @@
       color: var(--text-soft);
       font-size: 17px;
       line-height: 1.75;
-      margin-bottom: 16px;
+      margin-bottom: 30px;
     }
 
     .about-actions {
@@ -497,7 +492,6 @@
       align-items: center;
       gap: 18px;
       flex-wrap: wrap;
-      margin-top: 32px;
       padding-bottom: 40px;
       border-bottom: 1px solid rgba(23, 32, 42, 0.10);
     }
@@ -618,7 +612,7 @@
       }
 
       .hero {
-        padding: 56px 0 64px;
+        padding: 58px 0 70px;
       }
 
       .hero-title {
@@ -696,7 +690,7 @@
       }
 
       .hero {
-        padding: 42px 0 52px;
+        padding: 46px 0 58px;
       }
 
       .hero-cta-row {
@@ -899,11 +893,7 @@
             </h2>
 
             <p class="about-copy">
-              Tender Hearts provides compassionate, professional in-home care services for seniors who want to remain independent and supported in the comfort of their own homes.
-            </p>
-
-            <p class="about-copy">
-              Every care plan is personalized around the client’s needs, routine, and family preferences. From companionship and personal care to meal preparation, medication reminders, and light housekeeping, we focus on dependable care families can trust.
+              Tender Hearts provides compassionate, professional in-home care services that help seniors remain independent and supported in the comfort of their own homes, with personalized care plans built around each client’s needs, routine, and family preferences.
             </p>
 
             <div class="about-actions">
@@ -913,11 +903,6 @@
 
             <div class="about-stats">
               <div class="stat">
-                <div class="stat-number">20+</div>
-                <div class="stat-label">Years Combined Experience</div>
-              </div>
-
-              <div class="stat">
                 <div class="stat-number">CPR</div>
                 <div class="stat-label">Certified Caregivers</div>
               </div>
@@ -925,6 +910,11 @@
               <div class="stat">
                 <div class="stat-number">Local</div>
                 <div class="stat-label">Salem, Keizer & Woodburn</div>
+              </div>
+
+              <div class="stat">
+                <div class="stat-number">Flexible</div>
+                <div class="stat-label">Care Plans & Scheduling</div>
               </div>
             </div>
           </div>
