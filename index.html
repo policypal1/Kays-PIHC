@@ -418,7 +418,7 @@
       inset: 0;
       overflow: hidden;
       border-radius: 30px;
-      background: url("./IMG_0860.JPG") center 42% / cover no-repeat;
+      background: url("./IMG_0860.JPG") center 28% / cover no-repeat;
       box-shadow: 0 28px 78px rgba(23, 32, 42, 0.13);
       border: 1px solid rgba(21, 155, 154, 0.12);
       z-index: 2;
@@ -697,7 +697,7 @@
     .service-image {
       position: relative;
       overflow: hidden;
-      background: var(--service-img) center center / cover no-repeat;
+      background: var(--service-img) var(--service-pos, center center) / cover no-repeat;
     }
 
     .service-image::after {
@@ -758,12 +758,16 @@
       display: none;
     }
 
-    .service-personal { --service-img: url("./IMG_6204.JPG"); }
+    .service-personal {
+      --service-img: url("./IMG_6204.JPG");
+      --service-pos: center 28%;
+    }
+
     .service-companionship { --service-img: url("./IMG_0860.JPG"); }
-    .service-meals { --service-img: url("./IMG_0859.JPG"); }
+    .service-meals { --service-img: url("./meals.png"); }
     .service-housekeeping { --service-img: url("./IMG_6187.JPG"); }
     .service-transportation { --service-img: url("./IMG_0858.JPG"); }
-    .service-respite { --service-img: url("./IMG_6204.JPG"); }
+    .service-respite { --service-img: url("./dog.png"); }
 
     .how-it-works {
       position: relative;
