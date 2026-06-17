@@ -6,6 +6,9 @@
 
   <title>Tender Hearts In-Home Care</title>
   <meta name="description" content="Tender Hearts In-Home Care provides compassionate, reliable, personalized in-home support for seniors throughout Salem, Keizer, Woodburn, and nearby communities." />
+  <link rel="icon" type="image/png" href="./Untitled design (11).png">
+  <link rel="apple-touch-icon" href="./Untitled design (11).png">
+  <meta name="theme-color" content="#159b9a" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1384,6 +1387,39 @@
       line-height: 1.5;
     }
 
+    .form-status {
+      display: none;
+      margin-top: 16px;
+      padding: 13px 15px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .form-status.is-success {
+      display: block;
+      background: rgba(21, 155, 154, 0.12);
+      color: var(--teal-dark);
+      border: 1px solid rgba(21, 155, 154, 0.24);
+    }
+
+    .form-status.is-error {
+      display: block;
+      background: rgba(199, 91, 120, 0.12);
+      color: var(--pink-dark);
+      border: 1px solid rgba(199, 91, 120, 0.24);
+    }
+
+    .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
     .faq {
       background: #faf7fb;
       padding: 100px 0 110px;
@@ -1566,6 +1602,26 @@
       color: rgba(255, 255, 255, 0.60);
       font-size: 13px;
       font-weight: 700;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255, 255, 255, 0.70);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 800;
+      transition: color 0.18s ease;
+    }
+
+    .footer-bottom-links a:hover {
+      color: white;
     }
 
     .built-by-badge {
@@ -2399,6 +2455,11 @@
 
       .footer-bottom {
         display: grid;
+        justify-content: stretch;
+      }
+
+      .footer-bottom-links {
+        justify-content: flex-start;
       }
     }
 
@@ -2958,7 +3019,12 @@
             </div>
           </div>
 
-          <form class="contact-form" id="careContactForm">
+          <form class="contact-form" id="careContactForm" action="https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec" method="POST" data-script-url="https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec">
+            <input type="hidden" name="website" value="Tender Hearts In-Home Care">
+            <input type="hidden" name="formName" value="Care Consultation Request">
+            <input type="hidden" name="submittedAt" id="submittedAt" value="">
+            <input type="text" name="company" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
             <div class="form-row">
               <div class="form-field">
                 <label for="name">Full Name</label>
@@ -3003,6 +3069,8 @@
                 We will review your request and follow up as soon as possible.
               </p>
             </div>
+
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
         </div>
       </div>
@@ -3129,6 +3197,13 @@
 
       <div class="footer-bottom">
         <span>© 2026 Tender Hearts In-Home Care. All rights reserved.</span>
+
+        <div class="footer-bottom-links" aria-label="Legal links">
+          <a href="./privacy.html">Privacy Policy</a>
+          <a href="./terms.html">Terms of Service</a>
+          <a href="./accessibility.html">Accessibility</a>
+        </div>
+
         <a href="https://kumpulamarketing.co/" target="_blank" rel="noopener noreferrer" class="built-by-badge">
           Built by Kumpula Marketing
         </a>
@@ -3177,6 +3252,78 @@
         item.classList.toggle("is-open");
       });
     });
+
+    const careContactForm = document.getElementById("careContactForm");
+    const formStatus = document.getElementById("formStatus");
+    const submittedAt = document.getElementById("submittedAt");
+
+    if (careContactForm) {
+      careContactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const scriptUrl = careContactForm.dataset.scriptUrl || careContactForm.getAttribute("action");
+        const submitButton = careContactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton ? submitButton.textContent : "Submit Request";
+        const honeypot = careContactForm.querySelector('input[name="company"]');
+
+        if (honeypot && honeypot.value.trim() !== "") {
+          return;
+        }
+
+        if (!scriptUrl || scriptUrl.includes("PASTE_YOUR_DEPLOYMENT_ID_HERE")) {
+          if (formStatus) {
+            formStatus.textContent = "The form is ready. Replace the Google Apps Script placeholder URL in the form action and data-script-url fields before launch.";
+            formStatus.className = "form-status is-error";
+          }
+          return;
+        }
+
+        if (submittedAt) {
+          submittedAt.value = new Date().toISOString();
+        }
+
+        if (submitButton) {
+          submitButton.disabled = true;
+          submitButton.textContent = "Sending...";
+        }
+
+        if (formStatus) {
+          formStatus.textContent = "";
+          formStatus.className = "form-status";
+        }
+
+        try {
+          const formData = new FormData(careContactForm);
+          const payload = new URLSearchParams(formData);
+
+          await fetch(scriptUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: payload.toString()
+          });
+
+          careContactForm.reset();
+
+          if (formStatus) {
+            formStatus.textContent = "Thank you. Your request has been submitted, and Tender Hearts will follow up soon.";
+            formStatus.className = "form-status is-success";
+          }
+        } catch (error) {
+          if (formStatus) {
+            formStatus.textContent = "Something went wrong. Please call 503-509-4850 or email tenderheartsor25@gmail.com.";
+            formStatus.className = "form-status is-error";
+          }
+        } finally {
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
+        }
+      });
+    }
 
     const servicesGrid = document.getElementById("servicesGrid");
     const servicesPrev = document.getElementById("servicesPrev");
