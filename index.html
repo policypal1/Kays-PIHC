@@ -1411,6 +1411,94 @@
       border: 1px solid rgba(199, 91, 120, 0.24);
     }
 
+    .submit-success-pop {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(16, 32, 51, 0.22);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
+    }
+
+    .submit-success-pop.is-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .submit-success-card {
+      width: min(100%, 390px);
+      padding: 30px 24px 28px;
+      border-radius: 28px;
+      background: #ffffff;
+      text-align: center;
+      border: 1px solid rgba(21, 155, 154, 0.18);
+      box-shadow: 0 30px 90px rgba(16, 32, 51, 0.22);
+      transform: translateY(16px) scale(0.94);
+      transition: transform 0.28s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .submit-success-pop.is-visible .submit-success-card {
+      transform: translateY(0) scale(1);
+      animation: successPulse 0.55s ease-out;
+    }
+
+    .submit-success-icon {
+      width: 82px;
+      height: 82px;
+      margin: 0 auto 18px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #16a34a, #0f8f42);
+      color: #ffffff;
+      box-shadow: 0 18px 34px rgba(22, 163, 74, 0.25);
+    }
+
+    .submit-success-icon svg {
+      width: 42px;
+      height: 42px;
+      stroke-dasharray: 52;
+      stroke-dashoffset: 52;
+    }
+
+    .submit-success-pop.is-visible .submit-success-icon svg {
+      animation: drawCheck 0.45s ease 0.18s forwards;
+    }
+
+    .submit-success-title {
+      font-family: "Fraunces", Georgia, serif;
+      color: var(--text);
+      font-size: 30px;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+    }
+
+    .submit-success-text {
+      color: var(--text-soft);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.55;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes successPulse {
+      0% { transform: translateY(16px) scale(0.94); }
+      55% { transform: translateY(0) scale(1.035); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
     .honeypot {
       position: absolute !important;
       left: -9999px !important;
@@ -1418,6 +1506,7 @@
       height: 1px !important;
       opacity: 0 !important;
       pointer-events: none !important;
+      tabindex: -1;
     }
 
     .faq {
@@ -3019,7 +3108,7 @@
             </div>
           </div>
 
-          <form class="contact-form" id="careContactForm" action="https://script.google.com/macros/s/AKfycbyx5h0yabxTqxqR9wJ_mIdEPjc_ef07EniGADe48jfuzwavD9I7REORHGwt_1LZwCsqhA/exec" method="POST" data-script-url="https://script.google.com/macros/s/AKfycbyx5h0yabxTqxqR9wJ_mIdEPjc_ef07EniGADe48jfuzwavD9I7REORHGwt_1LZwCsqhA/exec">
+          <form class="contact-form" id="careContactForm" action="https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec" method="POST" data-script-url="https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec">
             <input type="hidden" name="website" value="Tender Hearts In-Home Care">
             <input type="hidden" name="formName" value="Care Consultation Request">
             <input type="hidden" name="submittedAt" id="submittedAt" value="">
@@ -3075,6 +3164,18 @@
         </div>
       </div>
     </section>
+
+    <div class="submit-success-pop" id="submitSuccessPop" role="status" aria-live="polite" aria-hidden="true">
+      <div class="submit-success-card">
+        <div class="submit-success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+        </div>
+        <h2 class="submit-success-title">Request Submitted</h2>
+        <p class="submit-success-text">Thank you. Your request was sent successfully.</p>
+      </div>
+    </div>
 
     <section class="faq" id="faq">
       <div class="container">
@@ -3256,6 +3357,29 @@
     const careContactForm = document.getElementById("careContactForm");
     const formStatus = document.getElementById("formStatus");
     const submittedAt = document.getElementById("submittedAt");
+    const submitSuccessPop = document.getElementById("submitSuccessPop");
+    let successPopTimer;
+
+    function showSubmitSuccess() {
+      if (!submitSuccessPop) return;
+
+      clearTimeout(successPopTimer);
+      submitSuccessPop.classList.add("is-visible");
+      submitSuccessPop.setAttribute("aria-hidden", "false");
+
+      successPopTimer = window.setTimeout(() => {
+        submitSuccessPop.classList.remove("is-visible");
+        submitSuccessPop.setAttribute("aria-hidden", "true");
+      }, 3600);
+    }
+
+    if (submitSuccessPop) {
+      submitSuccessPop.addEventListener("click", () => {
+        clearTimeout(successPopTimer);
+        submitSuccessPop.classList.remove("is-visible");
+        submitSuccessPop.setAttribute("aria-hidden", "true");
+      });
+    }
 
     if (careContactForm) {
       careContactForm.addEventListener("submit", async (event) => {
@@ -3306,9 +3430,10 @@
           });
 
           careContactForm.reset();
+          showSubmitSuccess();
 
           if (formStatus) {
-            formStatus.textContent = "Thank you. Your request has been submitted, and Tender Hearts will follow up soon.";
+            formStatus.textContent = "Thank you. Your request was sent successfully.";
             formStatus.className = "form-status is-success";
           }
         } catch (error) {
